@@ -7,3 +7,4 @@ Dev Enviroment -
 3. Goto client, type "cd client"
 4. On first time intallation , type "npm install" (Not to do this thereafter, only first time using the code).
 5. Then, type "npm start", webiste automatically opens up on chrome.
+  aman banka techcno india university
