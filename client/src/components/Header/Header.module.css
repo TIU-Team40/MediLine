@@ -1,11 +1,15 @@
+@import url('http://fonts.cdnfonts.com/css/gilroy-bold');
+                
+
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
+  height: 5em;
   border-bottom: 1px solid black;
   color: black;
+ 
 }
 
 .headerContent {
@@ -13,16 +17,62 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 60%;
-  margin: 0 auto;
+  margin: auto;
+  margin-top:0.75em;
 }
 
 .navList {
   display: flex;
+  
 }
 
 .navPills {
   margin: 1em;
+  font-size: 1.1em;
+  font-weight: 500;
+  font-family: 'Gilroy-Medium', sans-serif;
+ 
+
 }
 
-.brandName {
+.navPills:hover{
+
+  color:rgba(80, 80, 80, 0.8);
+  cursor:pointer;
+}
+.authButton
+{
+  border: none;
+  border-radius: 10px;
+  cursor:pointer;
+  padding: 0.5em 1.5em;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: rgb(247, 177, 35);
+  color: white;
+  
+}
+
+.authButton:hover{
+  background-color: rgb(149, 103, 10);
+}
+
+.brandName
+{
+  border:none;
+  width: 20%;
+  height: 40%;
+  font-size: 30px;
+  border-radius: 10px;
+  color:rgb(255, 255, 255);
+  background-color: rgba(32, 146, 233, 0.729);
+  font-weight: bold;
+  font-family: 'Gilroy-Medium', sans-serif;
+}
+
+@media screen and (max-width:768px)
+{
+  .headerContent{
+    width:80%;
+  }
 }
