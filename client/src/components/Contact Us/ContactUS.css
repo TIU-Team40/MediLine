@@ -1,0 +1,27 @@
+@import url('https://www.cdnfonts.com/gilroy-bold.font');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+.Contactus{
+        padding-bottom: 2%;
+        font-family: 'gilroy-bold',sans-serif;
+        text-indent: 10%;
+        text-align: left;
+        font-size: 55 px;
+}
+.content{
+        text-align: left;
+        text-indent :20%;
+        font-family: 'Inter',sans-serif;
+        align-content: flex-start;
+}
+.email
+{
+        text-align: center;
+        font-family: 'Inter',sans-serif;
+        align-content: flex-start;
+}
+.numbers{
+        text-align: left;
+        font-family: 'Inter',sans-serif;
+        align-content: flex-start;
+}
+

@@ -1,0 +1,18 @@
+@import url( 'https://www.cdnfonts.com/gilroy-bold.font');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap');
+.Founders{
+    padding-bottom: 10%;
+    text-align: left;
+    font-family:'gilroy-bold',sans-serif;
+    font-size: 55px;
+
+}
+.img{
+       align-items: stretch;
+        border-radius: 50%;
+}
+.p{
+    font-family: 'Inter', sans-serif;
+    line-height: 1;
+}
+
