@@ -1,0 +1,50 @@
+.herobanner-container{
+    display: flex;
+    max-width: 1100px;
+    flex-direction: column;
+    background-color: #efefefc6;
+    z-index: -1;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-bar{
+    margin-right: 1rem;
+}
+
+.hero-banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.welcome-header{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 1rem;
+}
+
+.welcome-header h1{
+    font-family: 'Gilroy';
+}
+
+.welcome-header h1 span
+{
+    font-family: 'Gilroy-Bold';
+}
+
+.welcome-header p{
+    font-family: 'Gilroy';
+    font-size: 24px;
+}
+.illustration img{
+    height: 400px;
+    width: 400px;
+    margin:10px;
+}

@@ -1,0 +1,25 @@
+
+.location-container{
+  
+    width: fit-content;
+    height: fit-content;
+    margin: 1rem;
+}
+
+.location-name
+{
+    display:flex;   
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.location-text{
+    background-color: #CDCDCD; 
+    padding: 0.5rem 2.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Inter';
+    margin-left:10px;
+}
