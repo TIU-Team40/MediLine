@@ -1,12 +1,12 @@
 import "./App.css";
 import Contact from "./components/Contact Us/ContactUs";
-import Header from "./components/Header/Header";
+import Founder from "./components/founder/Founder.js";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Contact />
+      
+      <Founder/>
     </div>
   );
 }
