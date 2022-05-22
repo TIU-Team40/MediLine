@@ -1,9 +1,9 @@
 import React from 'react'
-import LocationFinder from './LocationFinder'
-import SearchBar from './SearchBar'
+import LocationFinder from '../LocationFinder/LocationFinder'
+import SearchBar from '../SearchBar/SearchBar'
 import './HeroBanner.css'
-import herobanner_illustration from '../assets/herobanner_illustration.svg'
-import '../styles/global.css'
+import herobanner_illustration from '../../assets/herobanner_illustration.svg'
+import '../../styles/global.css'
 const HeroBanner = () => {
   return (
     <div className='herobanner-container'>

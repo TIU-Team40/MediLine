@@ -1,0 +1,70 @@
+
+.location-container{
+  
+    width: fit-content;
+    height: fit-content;
+    margin: 1rem;
+}
+
+.location-name
+{
+    display:flex;   
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.location-text{
+    background-color: #CDCDCD; 
+    padding: 0.5rem 2.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Inter';
+    margin-left:10px;
+}
+
+@media screen and (max-width: 1000px)
+{
+    .location-text{
+        font-size: 0.8rem;
+    }
+    .location-container{
+        margin:0.8rem;
+       
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    
+    .location-text{
+        padding: 0.5rem 1.5rem;
+        font-size: 0.7rem;
+    }
+    .location-name{
+        width: 100%;
+    }
+    .location-container{
+        width: 200px;
+    }
+}
+
+@media screen and (max-width:650px)
+{
+    .location-container{
+       
+        width: 150px;
+    }
+    .location-name{
+        width: 100%;
+    }
+   .location-text{
+       padding: 0.3rem 0.5rem;
+       font-size: 0.6rem;
+   }
+   .icon{
+       height: 1.2rem;
+       width:1.2rem;
+   }
+}

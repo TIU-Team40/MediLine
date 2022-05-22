@@ -1,6 +1,6 @@
 import React from 'react'
 import './Footer.css'
-import '../styles/global.css'
+import '../../styles/global.css'
 import { IconContext } from 'react-icons';
 import {FaGithub, FaFacebook,FaInstagram,FaLinkedin, FaRegCopyright} from 'react-icons/fa';
 import {MdLocationPin} from 'react-icons/md'
@@ -10,7 +10,7 @@ const Footer = () => {
       console.log("Clicked on location")
     }
   return (
-    <IconContext.Provider value={{color:"black", size:"1.5em" }}>
+    <IconContext.Provider value={{color:"black", size:"1.75em" }}>
     <footer className="main-footer">
         <div className="search-location" onClick={handleSearchLocation}>
             <span>

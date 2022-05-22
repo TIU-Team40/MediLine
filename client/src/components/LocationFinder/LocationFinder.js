@@ -1,6 +1,7 @@
 import React from 'react'
 import {MdLocationPin} from 'react-icons/md'
 import './LocationFinder.css'
+import '../../styles/global.css'
 const LocationFinder = () => {
     const locationFinderHandler = () => {
         console.log("location finder clicked");
@@ -10,7 +11,7 @@ const LocationFinder = () => {
       
 
         <div className="location-name">
-        <div className='location-icon'><MdLocationPin size="2rem"/></div>
+        <div className='location-icon'><MdLocationPin size="2rem" className='icon'/></div>
         <div className='location-text' onClick={locationFinderHandler}>Enter Your Location</div>
         </div>
 

@@ -1,0 +1,111 @@
+.herobanner-container{
+    display: flex;
+    max-width: 1100px;
+    flex-direction: column;
+    background-color: #efefefc6;
+    z-index: -1;
+    
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-bar{
+    margin-right: 1rem;
+}
+
+.hero-banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.welcome-header{
+    display: flex;
+    flex-direction: column;
+   
+    margin: 1rem;
+}
+
+.welcome-header h1{
+    font-family: 'Gilroy';
+}
+
+.welcome-header h1 span
+{
+    font-family: 'Gilroy-Bold';
+}
+
+.welcome-header p{
+    font-family: 'Gilroy';
+    font-size: 24px;
+}
+.illustration img{
+    height: 400px;
+    width: 400px;
+    margin:10px;
+}
+
+@media screen and (max-width:1000px) {
+    .welcome-header h1{
+        font-size: 1.6rem;
+    }
+    .welcome-header p{
+        font-size: 1.2rem;
+    }
+    .illustration img{
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width:768px)
+{
+    .welcome-header{
+        
+        font-size: 0.8rem;
+        
+    }
+    .welcome-header h1{
+        font-size: 1.4rem;
+    }
+    .welcome-header p{
+        font-size: 1rem;
+    }
+    .illustration img{
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width:650px){
+    
+    .welcome-header{
+        font-size: 0.75rem;
+        margin: 1rem;
+     
+    }
+    .hero-banner{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .welcome-header p{
+        font-size: 1rem;
+        text-align: center;
+    }
+    .welcome-header h1{
+        text-align: center;
+    }
+    .illustration img{
+        width: 300px;
+        height: 300px;
+    }
+    
+}
