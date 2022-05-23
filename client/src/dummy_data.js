@@ -1,4 +1,5 @@
 import paracetamol from './assets/Medicines/paracetamol.png'
+import SearchBar from './components/SearchBar/SearchBar';
 
 export const homepage_category = [
     {
@@ -11,7 +12,7 @@ export const homepage_category = [
           price: "20",
         },
         {
-          title: "Paracetamol",
+          title: "Ranitidine",
           imageUrl: paracetamol,
           description: "Tablets for fever - Paracetamol",
           price: "210",
@@ -58,13 +59,13 @@ export const homepage_category = [
             price: "20",
           },
           {
-            title: "Paracetamol",
+            title: "Ranitidine",
             imageUrl: paracetamol,
             description: "Tablets for fever - Paracetamol",
             price: "210",
           },
           {
-            title: "Paracetamol",
+            title: "Ibuprofen",
             imageUrl: paracetamol,
             description: "Tablets for fever - Paracetamol",
             price: "200",
@@ -76,19 +77,19 @@ export const homepage_category = [
             price: "120",
           },
           {
-              title: "Paracetamol",
+              title: "Omeprazole",
               imageUrl: paracetamol,
               description: "Tablets for fever - Paracetamol",
               price: "20",
             },
             {
-              title: "Paracetamol",
+              title: "Dolo",
               imageUrl: paracetamol,
               description: "Tablets for fever - Paracetamol",
               price: "20",
             },
             {
-              title: "Paracetamol",
+              title: "Zycan",
               imageUrl: paracetamol,
               description: "Tablets for fever - Paracetamol",
               price: "20",
@@ -96,3 +97,50 @@ export const homepage_category = [
         ],
       },
   ];
+
+  export const searchBarTest = [
+
+    {
+      title: "Paracetamol",
+      imageUrl: paracetamol,
+      description: "Tablets for fever - Paracetamol",
+      price: "20",
+    },
+    {
+      title: "Ranitidine",
+      imageUrl: paracetamol,
+      description: "Tablets for fever - Paracetamol",
+      price: "210",
+    },
+    {
+      title: "Ibuprofen",
+      imageUrl: paracetamol,
+      description: "Tablets for fever - Paracetamol",
+      price: "200",
+    },
+    {
+      title: "Azithromycin",
+      imageUrl: paracetamol,
+      description: "Tablets for fever - Paracetamol",
+      price: "120",
+    },
+    {
+        title: "Omeprazole",
+        imageUrl: paracetamol,
+        description: "Tablets for fever - Paracetamol",
+        price: "20",
+      },
+      {
+        title: "Dolo",
+        imageUrl: paracetamol,
+        description: "Tablets for fever - Paracetamol",
+        price: "20",
+      },
+      {
+        title: "Zycan",
+        imageUrl: paracetamol,
+        description: "Tablets for fever - Paracetamol",
+        price: "20",
+      },
+
+  ]

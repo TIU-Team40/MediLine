@@ -22,6 +22,7 @@
     text-align: left;
     font-family: 'Inter';
     margin-left:10px;
+   
 }
 
 @media screen and (max-width: 1000px)
@@ -54,14 +55,23 @@
 {
     .location-container{
        
-        width: 150px;
+        width: 110%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #CDCDCD;
+        border-radius: 10px;
+        padding: 0.2rem 0;
     }
     .location-name{
         width: 100%;
+
     }
    .location-text{
-       padding: 0.3rem 0.5rem;
-       font-size: 0.6rem;
+       padding: 0.1rem ;
+       font-size: 0.7rem;
+       
    }
    .icon{
        height: 1.2rem;

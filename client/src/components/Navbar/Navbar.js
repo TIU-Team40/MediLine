@@ -7,7 +7,7 @@ import {BiUserCircle} from 'react-icons/bi'
 import { useState } from "react";
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-
+  const isLoggedIn = false;
   return (
     <>
       <nav className="main-nav">
@@ -32,12 +32,15 @@ const Navbar = () => {
             </li>
           </ul>
        
-        <div className="auth">
-          <span>Sign In</span>
+        {!isLoggedIn ? <div className="auth">
+         
           <button type="button" className="auth-btn">
-            Sign Up
+            Log In
           </button>
-        </div>
+        </div> 
+        :
+        <div className="user-icons"> </div>
+        }
 
         <div className="smallscreen">
           <GiHamburgerMenu size="1.5rem" onClick={() => setToggleMenu(true)} />
@@ -53,7 +56,7 @@ const Navbar = () => {
               <button className="auth-btn-smallscreen" type="button" onClick={() => setToggleMenu(false)}>
                   <BiUserCircle size="2rem"/> 
                  
-                  Sign In | Sign Up
+                  Log In
               </button>
                 <li>
                   <a href="/" onClick={() => setToggleMenu(false)}>Home</a>

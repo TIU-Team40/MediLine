@@ -8,7 +8,7 @@
     width: 100%;
 }
 .logo{
-    margin-right: 15rem;
+    margin-right: 20rem;
     font-family: 'Gilroy-Medium', sans-serif;
     font-size: 1.5rem;
 }
@@ -34,6 +34,7 @@
 .menu-link li:hover{
     color: var(--color-primary);
     transform: scale(1.1);
+    background-color: none;
 }
 
 
@@ -51,7 +52,7 @@
 .auth-btn
 {
         padding: 0.5rem 1.5rem;
-        margin: 0 1rem;
+        margin: 0 0.5rem;
         font-size: 1.1rem;
         font-family: 'Inter', sans-serif;
         font-style: normal;

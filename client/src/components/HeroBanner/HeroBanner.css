@@ -4,17 +4,25 @@
     flex-direction: column;
     background-color: #efefefc6;
     z-index: -1;
-    
+    padding: 0;
 }
-
+.location{
+    width: 30%;
+}
 
 header{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 20px;
+    width: 100%;
 }
 .search-bar{
-    margin-right: 1rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 70%;
 }
 
 .hero-banner{
@@ -33,6 +41,7 @@ header{
 
 .welcome-header h1{
     font-family: 'Gilroy';
+    font-size: 25px;
 }
 
 .welcome-header h1 span
@@ -42,11 +51,11 @@ header{
 
 .welcome-header p{
     font-family: 'Gilroy';
-    font-size: 24px;
+    font-size: 20px;
 }
 .illustration img{
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
     margin:10px;
 }
 
@@ -80,6 +89,10 @@ header{
         width: 300px;
         height: 300px;
     }
+    header{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width:650px){
@@ -107,5 +120,22 @@ header{
         width: 300px;
         height: 300px;
     }
-    
+    header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .search-bar{
+        width: 90%;
+        
+    }
+    .location{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 }

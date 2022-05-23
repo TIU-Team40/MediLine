@@ -5,6 +5,7 @@ import MidCards from "../../components/MidCards/MidCards";
 import classes from "./Home.module.css";
 import { homepage_category } from "../../dummy_data";
 import '../../styles/global.css'
+
 const Home = () => {
   
 

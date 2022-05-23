@@ -4,11 +4,12 @@
     
     width: 100%;
     overflow: hidden;
-    background-color: #A0A0A0;
+    background-color: #bfbfbff1;
     display:flex;
     flex-direction: column;
     outline: none;
     border:none;
+    
 }
 
 .search-location
@@ -129,7 +130,5 @@
     .footer-copyright{
         font-size: 0.55rem;
     }
-    .footer-links ul li:last-child{
-       
-    }
+    
 }
