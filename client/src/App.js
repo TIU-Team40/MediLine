@@ -1,11 +1,15 @@
 import "./App.css";
-import Header from "./components/Header/Header";
-
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home/Home";
+import './styles/global.css'
 function App() {
   return (
-    <div className="App">
-      <Header />
-      {/* Welcome To MediLine */}
+    <div className="container">
+      <Navbar />
+         <Home/>
+     
+      <Footer/> 
     </div>
   );
 }

@@ -1,0 +1,134 @@
+.main-footer{
+    position: relative;
+    bottom:0;
+    
+    width: 100%;
+    overflow: hidden;
+    background-color: #bfbfbff1;
+    display:flex;
+    flex-direction: column;
+    outline: none;
+    border:none;
+    
+}
+
+.search-location
+{
+    border: 1px solid black;
+    width:15%;
+    margin: 2rem auto;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(126, 126, 126, 0.5);
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gilroy-Medium', sans-serif;
+    cursor: pointer;
+}
+.search-location span{
+    margin: 0 10px;
+    font-size: 15px;
+}
+.footer-links ul{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-links ul li{
+    list-style-type: none;
+    padding: 0 4rem;
+    font-family: 'Gilroy-Medium';
+    font-size: 17.5px;
+    line-height: 23px;
+    color: #000000;
+}
+
+
+
+.footer-socials
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gilroy-Medium';
+    font-size: 17.5px;
+    
+    color: #000000;
+    margin-top: 2rem;
+    
+}
+
+.footer-socials-icons span{
+   
+    padding: 0 0.5rem;
+   
+}
+.footer-socials-icons
+{
+    margin:10px;
+}
+
+.footer-copyright
+{
+    margin: auto;
+    margin-top: 3rem;
+    font-family: 'Inter';
+}
+
+@media screen and (max-width: 1000px)
+{
+    .search-location{
+        width: 30%;
+    }
+    .footer-links ul li{
+       padding: 0 3rem;
+    }
+    .footer-socials-icons span{
+   
+        padding: 0 0.3rem;
+       
+    }
+    .footer-socials-icons
+    {
+        margin:8px;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    .footer-links ul li{
+        padding: 0 2rem;
+    }
+}
+
+@media screen and (max-width: 650px)
+{
+  
+    .search-location{
+     width: 50% ;
+    }
+    .search-location span{
+        font-size: 0.8rem;
+    }
+    .footer-links ul{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .footer-links ul li{
+        padding: 0 0.8rem;
+        font-size: 0.8rem;
+        
+    }
+    .footer-socials span{
+        font-size: 0.8rem;
+    }
+    
+    .footer-copyright{
+        font-size: 0.55rem;
+    }
+    
+}
