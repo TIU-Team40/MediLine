@@ -1,0 +1,47 @@
+.relevant-medicine h2{
+   color: rgb(63, 63, 63);
+   margin: 2rem;
+}
+
+.sort-by{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+     background-color: var(--color-bggrey);
+    
+}
+.sort-by p{
+    font-family: 'Inter';
+    font-weight: 500;
+    margin-left: 2rem;
+}
+select{
+    padding: 0.5rem;
+    margin: 15px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Inter';
+    font-size: 0.9rem;
+}
+
+@media screen and (max-width:650px) {
+    .product-list-container{
+        width: 90%;
+        margin-top: 10px;
+    }
+    .sort-by p{
+        font-family: 'Inter';
+        font-weight: 500;
+        margin-left: 1rem;
+        font-size: 0.8rem;
+    }
+    select{
+       
+        font-size: 0.8rem;
+    }
+    .relevant-medicine h2{
+        color: rgb(63, 63, 63);
+        margin: 1rem;
+        font-size: 1.1rem;
+     }
+}

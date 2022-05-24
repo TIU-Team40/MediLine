@@ -1,0 +1,127 @@
+.largeCardContainer{
+  
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 1100px;
+    background-color: var(--color-bggrey);
+}
+
+.largeCardWrapper{
+    border-radius: 10px;
+    padding-top: 10px;
+    width: 90%;
+    height: 200px;
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid #cbd3d8ad;
+   
+}
+.largeCardWrapper:first-child{
+    margin-top: 2rem;
+}
+.largeCardWrapper:last-child{
+    margin-bottom: 2rem;
+}
+
+
+.largeCardImage img{
+   height: 200px;
+   width: 220px;
+}
+.largeCardContent{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0.5rem 0.75rem;
+    flex-wrap: wrap;
+    margin-left: 10px;
+}
+
+.largeCardTitle h3
+{
+    font-family: 'Inter';
+    margin: 5px 0;
+}
+
+.largeCardSmallDesc{
+    font-family: 'Inter';
+    margin: 10px 0;
+}
+
+.largeCardDesc{
+    font-family: 'Inter';
+    font-size: 0.8rem;
+}
+
+.largeCardPrice p{
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+@media screen and (max-width: 1000px)
+{   
+    .largeCardContainer{
+        width: 800px;
+    }
+    .largeCardImage img{
+        height: 180px;
+        width: 200px;
+     }
+     .largeCardWrapper{
+         height: 180px;
+     }
+     .largeCardTitle {
+         font-size: 0.9rem;
+     }
+     .largeCardSmallDesc{
+        
+        margin: 5px 0;
+        font-size: 0.75rem;
+        font-weight: 500;
+    }
+    
+    .largeCardDesc{
+        font-family: 'Inter';
+        font-size: 0.7rem;
+    }
+    .largeCardPrice p{
+        font-size: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 768px)
+{
+    .largeCardContainer{
+        width: 700px;
+    }
+}
+
+@media screen and (max-width: 650px)
+{
+    .largeCardContainer{
+        width: 100%;
+        background-color: var(--color-bggrey);
+    }
+    .largeCardDesc{
+        display: none;
+    }
+    .largeCardImage img{
+        height: 150px;
+        width: 150px;
+    }
+    .largeCardTitle{
+        font-size: 0.7rem;
+    }
+    .largeCardSmallDesc{
+        font-size: 0.7rem;
+    }
+    .largeCardWrapper{
+        height: 140px;
+    }
+}
