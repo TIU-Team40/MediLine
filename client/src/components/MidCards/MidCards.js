@@ -4,18 +4,24 @@ import '../../styles/global.css'
 import medicine_vector from '../../assets/medicine_vector.svg'
 import rx_vector from '../../assets/rx_vector.svg'
 import shop_vector from '../../assets/shop_vector.svg'
+import {Link} from 'react-router-dom'
 const MidCards = () => {
   return (
     <div className="midcards-container">
+      
+         <Link to='/products'>
         <div className="cards" onClick="">
             <div className="card-image">
             <img src={medicine_vector} alt="Medicine Vector" />
             </div>
+                
             <div className="card-content">
+                
                 <h2>ORDER ONLINE</h2>
                 <p>Search medicines online, or simply look up your symtomps and let our system suggest a medicine for you.</p>
             </div>
         </div>
+            </Link>
         <div className="cards" onClick="">
             <div className="card-image">
 

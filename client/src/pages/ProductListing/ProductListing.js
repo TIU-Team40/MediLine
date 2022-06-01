@@ -21,11 +21,26 @@ const ProductListing = () => {
             </select>
             
         </div>
-        <LargeCard data={searchBarTest}/>
+
+        <div className='product-list'>
+        {
+
+        searchBarTest.map((product)=> {
+          return (
+
+            <LargeCard key={product.id} data={product}/>
+          )
+        })
+      }
+      </div>
 
         <div className="relevant-medicine">
             <h2>Here are some other related medicines: </h2>
-            <LargeCard data={newSearchBarTest}/>
+            {newSearchBarTest.map((product)=>{
+              return(
+                <LargeCard key={product.id} data={product}/>
+              )
+            })}
         </div>
     </div>
   )

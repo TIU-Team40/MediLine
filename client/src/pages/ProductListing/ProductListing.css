@@ -23,6 +23,9 @@ select{
     font-family: 'Inter';
     font-size: 0.9rem;
 }
+.product-list{
+    padding-bottom: 1rem;
+}
 
 @media screen and (max-width:650px) {
     .product-list-container{

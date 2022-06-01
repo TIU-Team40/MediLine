@@ -6,6 +6,7 @@
     flex-direction: column;
     width: 1100px;
     background-color: var(--color-bggrey);
+   
 }
 
 .largeCardWrapper{
@@ -18,12 +19,10 @@
     border-bottom: 1px solid #cbd3d8ad;
    
 }
-.largeCardWrapper:first-child{
-    margin-top: 2rem;
+.largeCardWrapper{
+    margin-top: 0.2rem;
 }
-.largeCardWrapper:last-child{
-    margin-bottom: 2rem;
-}
+
 
 
 .largeCardImage img{
@@ -61,6 +60,70 @@
     font-family: 'Inter';
     font-weight: bold;
     font-size: 1.3rem;
+    
+}
+.largeCardPrice{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.cartButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addCart
+{
+    background-color: green;
+    padding: 0.7rem 2rem;
+    color: #fff;
+    font-family: 'Inter';
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s ease;
+}
+.addCart:hover{
+    background-color: rgb(0, 90, 0);
+    cursor: pointer;
+    
+    transform: scale(1.025);
+}
+.addCart:hover .cartIcon{
+    color: var(--color-primary)
+}
+.cartIcon{
+    margin: 0 0.2rem;
+    height: 18px;
+    width: 18px;
+}
+.removeCart{
+    background-color: rgb(213, 0, 0);
+    padding: 0.7rem 1.7rem;
+    color: #fff;
+    font-family: 'Inter';
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s ease;
+}
+.removeCart:hover{
+    background-color: rgb(174, 0, 0);
+    cursor: pointer;
+    
+    transform: scale(1.025);
+}
+.removeCart:hover .cartIcon{
+    color: var(--color-secondary)
+}
+.largeCardPriceForSmallScreens
+{
+    display:none;
 }
 
 @media screen and (max-width: 1000px)
@@ -100,6 +163,10 @@
     .largeCardContainer{
         width: 700px;
     }
+    .cartButton button{
+        padding: 0.5rem 1.25rem;
+        font-size: 0.7rem;
+    }
 }
 
 @media screen and (max-width: 650px)
@@ -124,4 +191,37 @@
     .largeCardWrapper{
         height: 140px;
     }
+    .cartButton button{
+        padding: 0.4rem 1rem;
+        font-size: 0.6rem;
+    }
+    .cartIcon{
+        margin: 0 0.2rem;
+        height: 14px;
+        width: 14px;
+    }
+    .largeCardPriceForSmallScreens{
+        display: flex;
+    }
+    .cartButton{
+        display: none;
+    }
+    .cartIconSmallPlus{
+        height: 1.3em;
+        width: 1.3em;
+        background-color: green;
+        color: white;
+        padding: 0.4rem;
+        border-radius: 50%;
+    }
+    .cartIconSmallMinus{
+        height: 1.3em;
+        width: 1.3em;
+        background-color: red;
+        color: white;
+        padding: 0.4rem;
+        border-radius: 50%;
+    }
+   
+    
 }
