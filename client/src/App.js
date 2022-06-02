@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import React from "react"
-import "./App.css";
-import Header from "./components/Header/Header";
-import About from "./components/About";
-import Services from "./components/Services";
-
-export default function App() {
-  return (
-    <div className="App">
-      {/* Welcome To MediLine */}
-=======
 import React from "react";
 
 import "./App.css";
@@ -32,9 +20,8 @@ function App() {
           <Route path="/cart" element={<Cart/>}/>
        </Routes>
       <Footer/> 
->>>>>>> origin/main
     </div>
   );
 }
 
-//export default App;
+export default App;
