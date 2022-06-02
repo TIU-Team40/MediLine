@@ -48,7 +48,7 @@ const SearchBar = ({ placeholder, data }) => {
       </div>
 
 
-      {filteredData.length!=0 &&
+      {filteredData.length!==0 &&
       <div className="data-result">
         {filteredData.slice(0, 15).map((value, key)=>{
           return(

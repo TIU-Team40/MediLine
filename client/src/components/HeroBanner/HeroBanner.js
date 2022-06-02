@@ -4,7 +4,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import "./HeroBanner.css";
 import herobanner_illustration from "../../assets/herobanner_illustration.svg";
 import "../../styles/global.css";
-import { homepage_category } from "../../dummy_data";
+
 import { searchBarTest } from "../../dummy_data";
 const HeroBanner = () => {
   return (

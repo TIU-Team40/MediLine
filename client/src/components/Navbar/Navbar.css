@@ -128,8 +128,121 @@
     align-items: center;
     
 }
+.user-icons{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+   
+}
+
+.cart-icon{
+    margin: 0 1rem;
+    cursor:pointer;
+}
+
+.notification-bell{
+    cursor:pointer;
+}
+
+.user-logo-open{
+    display: flex;
+    
+}
+
+.user-logo{
+    margin: 0 1rem;
+    cursor:pointer;
+    position: relative;
+  
+}   
+.user-logo-dropdown{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    position: absolute;
+    right: -5px;
+    z-index: 10;
+    top: 30px;
+    background-color: #fff;
+    width: 150px;
+    height: 100px;
+    padding: 0 1rem;
+    font-family: 'Inter';
+    border: 1px solid grey;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.user-logo-dropdown a{
+    padding: 3px 0;
+    transition: all .2s ease;
+}
+.user-logo-dropdown a:hover{
+    background-color: var(--color-bggrey);
+    color: var(--color-primary)
+}
 
 
+.notification-bell{
+    position: relative;
+}
+.notification-open{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    position: absolute;
+    right: -5px;
+    z-index: 10;
+    top: 30px;
+    background-color: #fff;
+    width: 350px;
+    height: 200px;
+    font-family: 'Inter';
+    border: 1px solid grey;
+    border-radius: 5px;
+    overflow: hidden;
+    overflow-y:auto;
+    
+}
+.notification-open::-webkit-scrollbar {
+    display: none;
+  }
+
+
+.counter{   
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color:white;
+    width: 18px;
+    height: 18px;
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    border-radius: 50%;
+}
+
+.cartBlock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-text{
+    position: relative;
+}
+.item-counter{
+    position: absolute;
+    font-size: 0.8rem;
+    margin: 0 0.2rem;
+    border-radius: 50%;
+    background-color: red;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    color: white;
+}
 @media screen and (max-width: 1100px)
 {
     .logo{

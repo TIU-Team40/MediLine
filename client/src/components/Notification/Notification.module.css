@@ -1,0 +1,19 @@
+.notificationContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.notifications p{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+   width: fit-content;
+   height: 20px;
+   padding: 1rem 0;
+   transition: all .2s ease;
+}
+.notifications p:hover{
+    color:var(--color-primary);
+
+}
+
