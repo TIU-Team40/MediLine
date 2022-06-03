@@ -1,0 +1,130 @@
+.search{
+    display: flex;
+     justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+   position: relative;
+   width: 100%;
+}
+.search-inputs {
+    display:flex;
+    padding: 0.5rem 5rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.search-inputs input{
+    padding: 0.8rem ;
+    border-radius: 5px;
+    outline: none;
+    border:0.5px solid black;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+    text-align: left;
+    transition: all .1s ease-in-out;
+    width: 100%;
+   
+}
+
+.search-inputs input:focus{
+    outline:none;
+    border: 1px solid rgba(32, 100, 183, 0.676);
+    background-color: rgb(255, 255, 255);
+}
+.search-icon{
+
+    margin-left: 5px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+   
+    width: fit-content;
+}
+.smallscreen-input{
+    display: none;
+}
+
+.data-result {
+    margin-top: 5px;
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    z-index: 5;
+  }
+  
+  .data-result::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .data-result .data-item {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: black;
+  }
+  
+  .data-item p {
+    margin-left: 10px;
+  }
+ 
+  .data-item:hover {
+    background-color: lightgrey;
+  }
+  
+
+@media screen and (max-width:768px) {
+    .search-inputs input{
+        padding: 0.5rem;
+    }
+    .icon{
+        height:1.5rem;
+        width: 1.5rem;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .search-inputs{
+        display: none;
+    }
+    .smallscreen-input{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0.5rem;
+        width: 100%;
+       
+    }
+    .search-icon-smallscreen{
+        margin: 0.5rem;
+    }
+    .smallscreen-input input{
+        padding: 0.8rem 0.5rem;
+        border: 1px solid black;
+        border-radius: 5px;
+        
+        width: 100%;
+    }
+    .smallscreen-input input:focus{
+        outline:none;
+        border:none;
+    }
+    .icon-smallscreen{
+        display: none;
+    }
+    .smallscreen-icon{
+        margin: 0 10px;
+    }
+    .data-item p {
+        font-size: 0.8rem;
+    }
+
+}

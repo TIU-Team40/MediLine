@@ -1,0 +1,79 @@
+.cartCardContainer{
+    display: flex;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  
+}
+
+.cartCardWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cartCardContent{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+.cartCardImage img{
+    width: 170px;
+    height: 170px;
+}
+.cartCardTitle h3{
+    font-family: 'Inter';
+    font-size: 17px;
+    margin-bottom: 0.2rem;
+}
+
+.cartCardSmallDesc {
+    font-family: 'Inter';
+    font-size: 14px;
+    margin: 1rem 0;
+}
+
+.cartCardDesc{
+    font-family: 'Inter';
+    font-size: 13px;
+}
+.cartCardPrice{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cartCardPrice p{
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px)
+{
+
+}
+
+@media screen and (max-width: 650px)
+{
+    .cartCardImage img{
+        height: 130px;
+        width: 130px;
+    }
+    .cartCardDesc{
+        display: none;
+
+    }
+    .cartCardTitle h3{
+        font-size: 0.90rem;
+    }
+    .cartCardSmallDesc{
+        font-size: 0.8rem;
+    }
+    .cartCardPrice p{
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,57 @@
+.user-info-container{
+    width: 100%;
+    border: 1px solid rgba(128, 128, 128, 0.5);;
+    height: 100%;
+    font-family: 'Inter';
+    border-radius: 5px;
+}
+.username h3{
+    font-weight: bold;
+    padding-left: 1rem;
+}
+
+.address{
+    display: flex;
+    flex-direction: column;
+    
+}
+.address h4{
+    padding-left: 1rem;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.address p{
+    margin: 5px 0;
+    padding-left: 1rem;
+
+}
+
+.state{
+    margin: 10px 0;
+    padding-left: 1rem;
+    font-weight: 700;
+}
+
+.pincode{
+    padding-left: 1rem;
+    margin: 15px 0;
+
+}
+
+.pincode span{
+    font-weight: 700;
+}
+
+.change-address{
+    padding-left: 1rem;
+    margin-top: 30px;
+    font-size: small;
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--color-secondary);
+    
+}
+.change-address:hover{
+    color: rgb(13, 11, 168);
+}
