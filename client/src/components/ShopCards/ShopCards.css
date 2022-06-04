@@ -1,0 +1,159 @@
+/* .shop-cards-container{
+    border: 1px solid black;
+    height: 100vh;
+    width: 1100px;
+    background-color: var(--color-bggrey);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+} */
+
+.shop-cards-wrapper{
+    margin: 0.5rem 1rem;
+    height: 270px;
+    width: 1000px;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.264);
+}
+
+.shop-cards-image-wrapper{
+    height: 300px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.8rem;
+}
+.shop-cards-image-wrapper img{
+    
+    border-radius: 10px;
+   height: 245px;
+   width: 370px;
+}
+.shop-cards-content{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 0.8rem;
+    
+    height: 100%;
+
+}
+
+.shop-name h1{
+   margin-bottom: 1.5rem;
+   font-family: 'Gilroy-Bold';
+   font-size: 25px;
+}
+
+.shop-description{
+    font-family: 'Inter';
+    font-size: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.shop-address{
+    font-family: 'Inter';
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 2.2rem;
+}
+
+.select-shop-button button{
+    padding: 0.5rem 2rem;
+    border: none;
+    background-color: var(--color-primary);
+    color:white;
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight:600;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.select-shop-button button:hover{
+    background-color: rgb(158, 95, 7);
+    
+}
+
+.select-shop-button-smallscreen button{
+    display: none;
+    padding: 0.5rem 2rem;
+    border: none;
+    background-color: var(--color-primary);
+    color:white;
+    font-family: 'Inter';
+    font-size: 10px;
+    font-weight:600;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .shop-cards-wrapper{
+        width: 80vw;
+        height: 210px;
+    }
+    .shop-cards-image-wrapper img{
+        height: 170px;
+        width: 250px;
+    }
+    .shop-name h1{
+        font-size: 17px;
+    }
+    .shop-description{
+        font-size: 13px;
+    }
+    .shop-address{
+        font-size: 13px;
+        margin-bottom: 1rem;
+    }
+    .select-shop-button button{
+        font-size: 12px;
+        padding: 0.4rem 1.5rem;
+
+    }
+
+}
+@media screen and (max-width: 650px) {
+    
+    .shop-cards-wrapper{
+        width: 90vw;
+        height: 200px;
+    }
+    .shop-cards-image-wrapper img{
+        height: 130px;
+        width: 150px;
+    }
+    .shop-name h1{
+        font-size: 15px;
+        margin-bottom: 0.5rem;
+    }
+    .shop-description{
+        font-size: 11px;
+        margin-bottom: 0.5rem;
+    }
+    .shop-address{
+        font-size: 11px;
+        margin-bottom: 1rem;
+    }
+    .select-shop-button button{
+        display: none;
+
+    }
+    .select-shop-button-smallscreen button{
+        display: block;
+    }
+    
+
+}

@@ -32,6 +32,8 @@ const MidCards = () => {
                 <p>Upload your prescription and get the medicine you need.</p>
             </div>
         </div>
+        <Link to='/selectshop'>
+
         <div className= "cards" onClick="">
             <div className="card-image">
             <img src={shop_vector} alt="Shop Vector" />
@@ -41,6 +43,7 @@ const MidCards = () => {
                 <p>Browse and search for local shops in your area from where you can buy medicines.</p>
             </div>
         </div>
+        </Link>
         
     </div>
   )
