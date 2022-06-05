@@ -1,0 +1,38 @@
+.form-info {
+    height: 40rem;
+    width: 70rem;
+}
+
+.form-input {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 5px;
+    width: 25rem;
+    height: 2rem;
+}
+
+.form-address {
+    margin-right: 18.5rem;
+    margin-bottom: 15px;
+}
+
+.form-save-btn {
+    color: #ffffff;
+    background-color: #e8b637;
+    margin: 10px;
+    padding: 10px 20px;
+    border: #e8b637;
+    border-radius: 4px;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+::-webkit-input-placeholder {
+    font-family: Inter;
+    color: black;
+}
