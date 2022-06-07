@@ -1,5 +1,5 @@
 .form-info {
-    height: 40rem;
+    height: 44rem;
     width: 70rem;
 }
 
@@ -19,11 +19,17 @@
 .form-save-btn {
     color: #ffffff;
     background-color: #e8b637;
-    margin: 10px;
+    margin: 20px 0;
     padding: 10px 20px;
     border: #e8b637;
     border-radius: 4px;
 
+}
+
+.form-img {
+    width:50px;
+    height:50px;
+    margin: 20px 10px;
 }
 
 form {
@@ -34,5 +40,4 @@ form {
 
 ::-webkit-input-placeholder {
     font-family: Inter;
-    color: black;
 }
