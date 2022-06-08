@@ -14,7 +14,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   const [open, setOpen] = useState(false);
   const [notificationOpen, setNotificationOpen] = useState(false);
   const {  cartItems, totalItem } = useContext(CartContext);
@@ -54,9 +54,13 @@ const Navbar = () => {
 
         {!isLoggedIn ? (
           <div className="auth">
+            <Link to='/login'>
+
             <button type="button" className="auth-btn">
               Log In
             </button>
+
+            </Link>
           </div>
         ) : (
           <div className="user-icons">
@@ -110,6 +114,8 @@ const Navbar = () => {
                     Hi, username
                   </button>
                 ) : (
+                  <Link to='/login'>
+
                   <button
                     className="auth-btn-smallscreen"
                     type="button"
@@ -118,6 +124,7 @@ const Navbar = () => {
                     <BiUserCircle size="2rem" />
                     Log In
                   </button>
+                  </Link>
                 )}
                 <li>
                   <a href="/" onClick={() => setToggleMenu(false)}>

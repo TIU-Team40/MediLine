@@ -5,7 +5,9 @@
 
 :root{
     --color-primary:#e8b637;
+    --color-primary-dark:#785e1f;
     --color-secondary: #256ca6;
+    --color-secondary-dark: #1c4567;
     --color-bggrey: #efefefc6;
 }
 a{
