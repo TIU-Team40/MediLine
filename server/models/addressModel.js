@@ -25,7 +25,7 @@ const addressSchema = mongoose.Schema({
     type: String,
     require: true,
   },
-  mobileNo: {
+  contactNo: {
     type: String,
     require: true,
   },

@@ -40,17 +40,33 @@ const userSchema = mongoose.Schema({
       required: true,
     },
   ],
-  cart: [{
-    medicine: {
+  cart: [
+    {
+      medicine: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Medicine",
-        require: true
+        require: true,
+      },
+      quantity: {
+        type: Number,
+        require: true,
+      },
+      pharmacy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Pharmacy",
+        require: true,
+      },
+      price: {
+        type: Number,
+        require: true,
+      },
     },
-    quantity: {
-      type: Number,
-      require: true,
-    },
-  }],
+  ],
+  notification: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Notification",
+    require: true,
+  },
   forgotPasswordCode: String,
   forgotPasswordExpiry: Date,
   createdAt: {

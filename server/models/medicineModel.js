@@ -6,16 +6,8 @@ const medicineSchema = mongoose.Schema({
     required: true,
   },
   picture: {
-    id: {
-      type: String,
-      require: true,
-      default: "",
-    },
-    secure_url: {
-      type: String,
-      require: true,
-      default: "",
-    },
+    type: String,
+    require: true,
   },
   price: {
     type: Number,
@@ -42,10 +34,11 @@ const medicineSchema = mongoose.Schema({
   ratings: {
     type: Number,
     required: true,
+    default: 4.5
   },
   perUnitQuantity: {
-      type: String,
-      required: true
+    type: String,
+    required: true,
   },
   createdAt: {
     type: Date,

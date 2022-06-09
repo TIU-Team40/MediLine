@@ -1,5 +1,7 @@
 const User = require("../models/userModel");
 const Medicine = require("../models/medicineModel");
+const Address = require("../models/addressModel");
+const Order = require("../models/orderModel");
 const BigPromise = require("../middlewares/bigPromise");
 const cookieToken = require("../utils/cookieToken");
 const customError = require("../utils/customError");
@@ -223,7 +225,11 @@ exports.userDashboard = BigPromise(async (req, res) => {
 });
 
 exports.updatePassword = BigPromise(async (req, res) => {
-  const user = await User.findById(req.user.id).select("+password");
+  const user = await User.findById(req.user.id)
+    .select("+password")
+    .populate("cart.medicine")
+    .populate("addresses")
+    .populate("orders");
 
   const isPasswordValidated = await user.isPasswordValidated(
     req.body.oldPassword
@@ -277,7 +283,215 @@ exports.updateUser = BigPromise(async (req, res) => {
   });
 });
 
-// Controllers
+// Cart Controllers
+exports.addToCart = BigPromise(async (req, res) => {
+  const user = req.user;
+  const { medicineId, pharmacy, price } = req.body;
+
+  if (
+    user.cart.find((item) => item.product._id.toString() === req.body.productId)
+  )
+    return res.json({
+      success: false,
+    });
+
+  user.cart.push({ medicine: medicineId, quantity: 1, pharmacy, price });
+
+  await user.save();
+
+  res.status(200).json({
+    success: true,
+    user,
+  });
+});
+
+exports.deleteFromCart = BigPromise(async (req, res) => {
+  const user = req.user;
+
+  const newCart = user.cart.filter(
+    (prod) => prod.medicine._id.toString() !== req.body.medicineId
+  );
+
+  await user.updateOne({ cart: newCart });
+
+  res.status(200).json({
+    success: true,
+    user,
+  });
+});
+
+exports.emptyCart = BigPromise(async (req, res) => {
+  const user = req.user;
+
+  user.cart = [];
+
+  await user.save();
+
+  res.status(200).json({
+    success: true,
+    user,
+  });
+});
+
+exports.updateCartQuantity = BigPromise(async (req, res) => {
+  const user = req.user;
+  const { medicineId, quantity } = req.body;
+
+  const newCart = user.cart.map((prod) => {
+    if (prod.product._id.toString() === medicineId) {
+      prod.quantity = quantity;
+    }
+    return prod;
+  });
+
+  extend(user, { cart: newCart });
+
+  await user.save();
+
+  res.status(200).json({
+    success: true,
+    user,
+  });
+});
+
+// Address Controllers
+exports.addAddress = BigPromise(async (req, res) => {
+  const user = req.user;
+  const { name, addressLine, city, state, country, pinCode, contactNo } =
+    req.body;
+
+  if (
+    !name |
+    !addressLine |
+    !city |
+    !state |
+    !country |
+    !pinCode |
+    !contactNo
+  ) {
+    return res.json({
+      success: false,
+      message: "All fields are required !!",
+    });
+  }
+
+  const addressObject = {
+    name,
+    addressLine,
+    city,
+    state,
+    country,
+    pinCode,
+    contactNo,
+    user: user._id,
+  };
+  const address = await Address.create(addressObject);
+
+  user.addresses.push(address);
+
+  await user.save();
+
+  res.status(200).json({
+    success: true,
+    address,
+  });
+});
+
+exports.editAddress = BigPromise(async (req, res) => {
+  const address = await Address.findById(req.params.addressId);
+
+  const updatedAddress = extend(address, req.body);
+
+  await address.save();
+
+  res.status(200).json({
+    success: true,
+    updatedAddress,
+  });
+});
+
+exports.deleteAddress = BigPromise(async (req, res) => {
+  const user = req.user;
+  const address = await Address.findById(req.params.addressId);
+
+  await address.delete();
+
+  const updatedAddress = user.addresses.filter(
+    (addr) => addr._id.toString() !== req.params.addressId
+  );
+
+  await user.updateOne({ addresses: updatedAddress });
+
+  res.status(200).json({
+    success: true,
+    updatedAddress,
+  });
+});
+
+// Orders
+exports.createOrder = BigPromise(async (req, res) => {
+  const user = req.user;
+  const {
+    addressId,
+    medicines,
+    paymentInfoId,
+    totalAmount,
+    discountAmount,
+    orderAmount,
+    pharmacyId,
+  } = req.body;
+
+  const orderObject = {
+    address: addressId,
+    medicines,
+    paymentInfoId,
+    totalAmount,
+    discountAmount,
+    orderAmount,
+    user: user._id,
+    pharmacy: pharmacyId,
+  };
+
+  if (!addressId) {
+    return res.json({
+      success: false,
+      message: "Select a address",
+    });
+  }
+
+  const order = await Order.create(orderObject);
+
+  order.populate("medicines.medicine");
+  order.populate("address");
+  order.populate("pharmacy");
+
+  user.orders.push(order);
+
+  await user.save();
+
+  res.status(200).json({
+    success: true,
+    order,
+  });
+});
+
+exports.cancelOrder = BigPromise(async (req, res) => {
+  const user = req.user;
+  const order = await Order.findById(req.body.orderId);
+
+  await order.delete();
+
+  const updatedOrders = user.orders.filter(
+    (order) => order._id.toString() !== req.body.orderId
+  );
+
+  await user.updateOne({ orders: updatedOrders });
+
+  res.status(200).json({
+    success: true,
+    updatedOrders,
+  });
+});
 
 // Admin Controllers
 exports.adminUsers = BigPromise(async (req, res) => {

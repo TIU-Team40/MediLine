@@ -11,6 +11,15 @@ const {
   userDashboard,
   updatePassword,
   updateUser,
+  addToCart,
+  deleteFromCart,
+  updateCartQuantity,
+  emptyCart,
+  addAddress,
+  editAddress,
+  deleteAddress,
+  createOrder,
+  cancelOrder,
   adminUsers,
   adminGetUser,
   adminUpdateUser,
@@ -38,7 +47,26 @@ router.route("/userdashboard").get(isLoggedIn, userDashboard);
 router.route("/password/update").post(isLoggedIn, updatePassword);
 router.route("/user/update").post(isLoggedIn, updateUser);
 
-// Routes
+// Cart Routes
+router
+  .route("/user/cart")
+  .post(isLoggedIn, addToCart)
+  .delete(isLoggedIn, deleteFromCart)
+  .put(isLoggedIn, updateCartQuantity);
+router.route("/user/emptycart").delete(isLoggedIn, emptyCart);
+
+// Address Route
+router.route("/user/address").post(isLoggedIn, addAddress);
+router
+  .route("/user/address/:addressId")
+  .post(isLoggedIn, editAddress)
+  .delete(isLoggedIn, deleteAddress);
+
+// Order Route
+router
+  .route("/user/order")
+  .post(isLoggedIn, createOrder)
+  .delete(isLoggedIn, cancelOrder);
 
 // Admin Routes
 router

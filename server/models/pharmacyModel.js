@@ -27,26 +27,12 @@ const pharmacySchema = mongoose.Schema({
     default: "pharmacy",
   },
   address: {
-    addressLine: {
-      type: String,
-      required: [true, "Address Line required"],
-    },
-    city: {
-      type: String,
-      required: true,
-    },
-    state: {
-      type: String,
-      required: true,
-    },
-    country: {
-      type: String,
-      require: true,
-    },
-    pinCode: {
-      type: String,
-      require: true,
-    },
+    type: String,
+    required: [true, "Address Line required"],
+  },
+  pinCode: {
+    type: String,
+    require: true,
   },
   contactNo: {
     type: String,
@@ -63,12 +49,29 @@ const pharmacySchema = mongoose.Schema({
         type: Number,
         require: true,
       },
+      price: {
+        type: Number,
+        require: true,
+      },
     },
   ],
   ratings: {
     type: Number,
     required: true,
+    default: 4.5,
   },
+  notification: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Notification",
+    require: true,
+  },
+  orders: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Order",
+      required: true,
+    },
+  ],
   forgotPasswordCode: String,
   forgotPasswordExpiry: Date,
   createdAt: {

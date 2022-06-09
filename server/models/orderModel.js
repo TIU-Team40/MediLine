@@ -40,6 +40,11 @@ const orderSchema = mongoose.Schema({
     ref: "User",
     required: true,
   },
+  pharmacy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Pharmacy",
+    required: true,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

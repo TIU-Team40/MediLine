@@ -10,16 +10,8 @@ const diseaseSchema = mongoose.Schema({
     required: true,
   },
   picture: {
-    id: {
-      type: String,
-      require: true,
-      default: "",
-    },
-    secure_url: {
-      type: String,
-      require: true,
-      default: "",
-    },
+    type: String,
+    require: true,
   },
   medicines: [
     {
