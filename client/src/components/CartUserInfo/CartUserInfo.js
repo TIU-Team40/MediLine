@@ -27,7 +27,7 @@ const CartUserInfo = ({information}) => {
                </span>
        </div>
        <div className="change-address">
-           <Link to='/profile'>
+           <Link to='/useraddress'>
                Change Address
            </Link>
        </div>

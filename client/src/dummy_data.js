@@ -258,13 +258,31 @@ export const homepage_category = [
      firstName: 'Nilankoor',
      lastName: 'Biswas',
      dob:'02/05/1999',
+     phoneNumber: '7001345668',
+     emailId: 'nilankoorb@gmail.com',
      addressLine1: 'Debinagar, Maynaguri',
      addressLine2: 'Jalpaiguri',
      state: 'West Bengal',
+  
      pinCode: '735224',
      
   }
 
+  
+  export const blank =
+  {
+     firstName: '',
+     lastName: '',
+     dob:'',
+     phoneNumber: '',
+     emailId: '',
+     addressLine1: '',
+     addressLine2: '',
+     state: 'West Bengal',
+  
+     pinCode: '',
+     
+  }
   export const singleProduct ={
     _id: 7,
     title: "Zycan",
@@ -286,14 +304,14 @@ export const homepage_category = [
   },
   {
     _id: 2,
-    name: "Apollo Pharmacy",
+    name: "Opennhi Pharmacy",
     imageUrl: pharmacy_shop,
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     address: "EM-4 Block, Sector IV, Salt Lake",
   },
   {
     _id: 3,
-    name: "Apollo Pharmacy",
+    name: "Amaksa Pharmacy",
     imageUrl: pharmacy_shop,
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     address: "EM-4 Block, Sector IV, Salt Lake",
@@ -301,7 +319,7 @@ export const homepage_category = [
   },
   {
     _id: 4,
-    name: "Apollo Pharmacy",
+    name: "Champion Pharmacy",
     imageUrl: pharmacy_shop,
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     address: "EM-4 Block, Sector IV, Salt Lake",
@@ -309,7 +327,7 @@ export const homepage_category = [
   },
   {
     _id: 5,
-    name: "Apollo Pharmacy",
+    name: "Franklin Pharmacy",
     imageUrl: pharmacy_shop,
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     address: "EM-4 Block, Sector IV, Salt Lake",
@@ -317,7 +335,7 @@ export const homepage_category = [
   },
   {
     _id: 6,
-    name: "Apollo Pharmacy",
+    name: "Jetski Pharmacy",
     imageUrl: pharmacy_shop,
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     address: "EM-4 Block, Sector IV, Salt Lake",
@@ -325,7 +343,7 @@ export const homepage_category = [
   },
   {
     _id: 7,
-    name: "Apollo Pharmacy",
+    name: "Maa Durga Pharmacy",
     imageUrl: pharmacy_shop,
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     address: "EM-4 Block, Sector IV, Salt Lake",
@@ -333,7 +351,7 @@ export const homepage_category = [
   },
   {
     _id: 8,
-    name: "Apollo Pharmacy",
+    name: "Gupta Pharmacy",
     imageUrl: pharmacy_shop,
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     address: "EM-4 Block, Sector IV, Salt Lake",
@@ -341,10 +359,19 @@ export const homepage_category = [
   },
   {
     _id: 9,
-    name: "Apollo Pharmacy",
+    name: "Frank and Ross Pharmacy",
     imageUrl: pharmacy_shop,
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     address: "EM-4 Block, Sector IV, Salt Lake",
 
   },
+]
+
+export const locationArray=[
+
+  "Salt Lake",
+  "New Town",
+  "Bangur",
+  "Lake Town",
+  
 ]

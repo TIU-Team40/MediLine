@@ -35,6 +35,7 @@ const ProductDetails = ({ product, similarProducts }) => {
   return (
     <div>
       
+          
           <div className="product-detail-container">
             <div>
               <div className="image-container">

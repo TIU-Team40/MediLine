@@ -62,9 +62,10 @@
     font-size: 15px;
     font-weight: 600;
     margin-bottom: 2.2rem;
+    margin-top: 4rem;
 }
 
-.select-shop-button button{
+/* .select-shop-button button{
     padding: 0.5rem 2rem;
     border: none;
     background-color: var(--color-primary);
@@ -96,7 +97,7 @@
     text-transform: uppercase;
     transition: all .2s ease;
     cursor: pointer;
-}
+} */
 
 @media screen and (max-width: 768px) {
     
@@ -117,12 +118,9 @@
     .shop-address{
         font-size: 13px;
         margin-bottom: 1rem;
+        margin-top: 2rem;
     }
-    .select-shop-button button{
-        font-size: 12px;
-        padding: 0.4rem 1.5rem;
-
-    }
+   
 
 }
 @media screen and (max-width: 650px) {

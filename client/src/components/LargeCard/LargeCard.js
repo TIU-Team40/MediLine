@@ -58,7 +58,7 @@ const LargeCard = ({ data }) => {
                   
                 </div>
                
-                {
+                {/* {
                   cartItems.some(p=>p._id===data._id)?
                   (
                     <div className={classes.  largeCardPriceForSmallScreens}>
@@ -72,7 +72,7 @@ const LargeCard = ({ data }) => {
                     
                     )
                     
-                  }
+                  } */}
               </div>
             </div>
           </div>

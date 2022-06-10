@@ -5,19 +5,16 @@ import { IconContext } from 'react-icons';
 import {FaGithub, FaFacebook,FaInstagram,FaLinkedin, FaRegCopyright} from 'react-icons/fa';
 import {MdLocationPin} from 'react-icons/md'
 const Footer = () => {
-    const handleSearchLocation = () =>
-    {
-      console.log("Clicked on location")
-    }
+ 
   return (
     <IconContext.Provider value={{color:"black", size:"1.75em" }}>
     <footer className="main-footer">
-        <div className="search-location" onClick={handleSearchLocation}>
+        {/* <div className="search-location">
             <span>
             Search for a location 
             </span>
             <MdLocationPin/>
-        </div>
+        </div> */}
         <div className="footer-links">
             <ul>
                 <li><a href="/">About Us</a></li>

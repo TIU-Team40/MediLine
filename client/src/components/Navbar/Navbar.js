@@ -14,16 +14,18 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const isLoggedIn = false;
+  const isLoggedIn = true;
+  const isShopowner = true;
   const [open, setOpen] = useState(false);
   const [notificationOpen, setNotificationOpen] = useState(false);
   const {  cartItems, totalItem } = useContext(CartContext);
   return (
     <>
+
       <nav className="main-nav">
         <div className="logo">
           <h3>
-            <a href="/">MediLine</a>
+            <Link to="/">MediLine</Link>
           </h3>
         </div>
 
@@ -32,12 +34,12 @@ const Navbar = () => {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/orders">Orders</a>
+            <Link to="/orders">Orders</Link>
           </li>
           <li>
             <Link to="/cart">
 
-              
+  
             <div className="cart-block">
               <a href="/cart" className="cart-text">
                 Cart
@@ -48,7 +50,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <a href="/consult">Consult</a>
+            <Link to="/consult">Consult</Link>
           </li>
         </ul>
 
@@ -83,9 +85,9 @@ const Navbar = () => {
               {open && (
                 <div className="user-logo-open">
                   <div className="user-logo-dropdown">
-                    <a href="/">Profile</a>
-                    <a href="/">Change Address</a>
-                    <a href="/">Log Out</a>
+                    <Link to='/userprofile'>Profile</Link>
+                    <Link to="/useraddress">Change Address</Link>
+                    <Link to="/">Log Out</Link>
                   </div>
                 </div>
               )}

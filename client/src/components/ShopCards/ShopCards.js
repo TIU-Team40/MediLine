@@ -19,16 +19,16 @@ const ShopCards = ({data}) => {
                 <div className="shop-address">
                     {data.address}
                 </div>
-                <div className="select-shop-button">
+                {/* <div className="select-shop-button">
                     <button type="button">
                         Select this pharmacy
                     </button>
-                </div>
-                <div className="select-shop-button-smallscreen">
+                </div> */}
+                {/* <div className="select-shop-button-smallscreen">
                     <button type="button">
                         Select 
                     </button>
-                </div>
+                </div> */}
             </div>
         </div>
     </div>

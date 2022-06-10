@@ -9,9 +9,10 @@ import '../../styles/global.css'
 
 const Home = () => {
   
-
+  const isShopowner = true;
 
   return (
+   
     <div>
       <HeroBanner />
        <MidCards />
