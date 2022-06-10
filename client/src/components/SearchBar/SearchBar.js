@@ -2,11 +2,13 @@ import React, {useState} from "react";
 import { MdSearch, MdClose } from "react-icons/md";
 import "./SearchBar.css";
 import "../../styles/global.css";
+import { useNavigate } from "react-router-dom";
 
 
 const SearchBar = ({ placeholder, data }) => {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
+  const navigate = useNavigate();
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
@@ -52,9 +54,11 @@ const SearchBar = ({ placeholder, data }) => {
       <div className="data-result">
         {filteredData.slice(0, 15).map((value, key)=>{
           return(
-            <a href="/" className="data-item">
+            <div className="data-item" onClick={()=>
+              navigate(`/product/${value._id}`)
+            }>
               <p>{value.title}</p>
-            </a>
+            </div>
           )
         })}
       </div>

@@ -1,0 +1,191 @@
+.upload-pres-container{
+    max-width: 1100px;
+    width: 100%;
+   
+    height: 700px;
+    background-color: var(--color-bggrey);
+}
+
+.upload-pres-container h1{
+    font-family: 'Gilroy-Bold';
+    margin-left: 1rem;
+}
+
+.upload-pres-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+label{
+    font-weight: 500;
+}
+.upload-pres-wrapper form{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    font-family: 'Inter';
+    height: fit-content;
+    width: 100%;
+    padding: 2rem;
+    margin: auto;
+}
+.upload-pres-wrapper form label{
+  font-size: 20px;
+    margin-right: 2rem;
+
+}
+
+.upload-pres-wrapper form input{
+   font-family: 'Inter';
+   font-size: 15px;
+    
+}
+
+.pres-textarea{
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    
+    width: 100%;
+    font-family: 'Inter';
+    font-size: 15px;
+    
+
+}
+.pres-textarea input{
+    width: 90%;
+    padding-bottom: 200px;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    border: none;
+    outline: 1px solid grey;
+    border-radius: 5px;
+    font-family: 'Inter';
+    font-size: 16px;
+    padding-left: 15px;
+    padding-top: 1rem;
+}
+
+::placeholder{
+    font-size: 16px;
+}
+
+.select-shop-dropdown{
+   
+    width: 100%;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 500;
+
+    margin-left: 4rem;
+}
+
+.select-shop-dropdown select{
+    
+    
+    font-family: 'Inter';
+    font-size: 17px;
+    padding: 0.5rem 2rem;
+}
+
+.select-button{
+    width: 100%;
+    
+
+}
+.select-button button{
+    font-family: 'Inter';
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--color-primary);
+    margin: 2rem 3rem;  
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.select-button button:hover{
+    background-color: var(--color-primary-dark);
+    transform: scale(1.1);
+}
+
+@media screen and (max-width:768px)
+{
+    .upload-pres-container h1
+    {
+        font-size: 20px;
+    }
+    .upload-pres-container{
+        width: 90%;
+    }
+    .upload-pres-wrapper form
+    {
+        width: 90%;
+        
+
+    }
+    .upload-pres-wrapper form label{
+        font-size: 15px;
+    }
+    .select-shop-dropdown{
+   
+        
+        font-family: 'Inter';
+        font-size: 15px;
+        
+    }
+    .select-shop-dropdown select{
+        font-size: 15px;
+    }
+
+    .select-button button{
+        font-size: 15px;
+        padding: 0.5rem 1.5rem;
+        margin-left: 2rem;
+    }
+
+}
+
+@media screen and (max-width:650px)
+{
+    .upload-pres-container h1
+    {
+        font-size: 20px;
+    }
+    .upload-pres-container{
+        width: 85%;
+    }
+    .upload-pres-wrapper form
+    {
+        width: 90%;
+        margin: 0;
+
+    }
+    .upload-pres-wrapper form label{
+        font-size: 13px;
+    }
+    ::placeholder{
+        font-size: 13px;
+    }
+    .select-shop-dropdown{
+   
+        
+        font-family: 'Inter';
+        font-size: 13px;
+        
+    }
+    .select-shop-dropdown select{
+        font-size: 13px;
+    }
+
+    .select-button button{
+        font-size: 15px;
+        padding: 0.5rem 1.5rem;
+        margin-left: 2rem;
+    }
+
+}
