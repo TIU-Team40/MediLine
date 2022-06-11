@@ -419,6 +419,15 @@ margin-top: 160px;
 }
 
 @media screen and (max-width:800px) {
+  
+  .select-your-shop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+  }
+  
   .hero-banner-container{
     height: 560px;
   }
@@ -591,5 +600,6 @@ margin-top: 160px;
     display: grid;
     grid-template-columns: repeat(2,1fr);
   }
-  
+
+
 }

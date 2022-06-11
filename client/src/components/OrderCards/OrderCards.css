@@ -1,25 +1,28 @@
 .order-cards-container{
-    background-color: white;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: .5rem 2rem;
    
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
     border-radius: 5px;
-    box-shadow: 0 0px 3px 2px rgba(0, 0, 0, 0.305);
+    font-family: 'Inter';
+    
 }
-
+.order-card-desc p{
+    font-size: 12px;
+}
 .order-cards-card{
     display: flex;
     justify-content: flex-start;
     align-items: center;
   
+    width: 100%;
+  
 }
 
+
 .card-image-wrapper img{
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
 }
 
 .card-content
@@ -33,11 +36,13 @@
 
 }
 
-.card-title{
-    font-family: 'Inter';
-    
+.order-card-title h2{
+    font-size: 15px;
 }
-.order-card-description {
+
+
+.quantity-and-price{
+    font-family: 'Inter';
     font-size: 12px;
 }
 .card-price{
@@ -88,75 +93,38 @@
 
 @media screen and (max-width:768px)
 {
-    .card-quantity{
-        font-size: 15px;
+    .card-image-wrapper img{
+        height: 90px;
+        width: 90px;
     }
-    .card-shipping-status{
-        margin-right: 1rem;
-        font-size: 13px;
+    .order-card-title h2{
+        font-size: 14px;
     }
-    
-    .card-order-date{
-        margin-right: 1rem;
-        font-size: 13px;
-    }
-    
-    .card-order-again{
-        margin-left: auto;
-        
-    }
-    
-    .card-order-again button{
-        padding: 0.6rem 2rem;
-        border: none;
-        background-color: var(--color-primary);
-        color: white;
+    .quantity-and-price p{
         font-family: 'Inter';
-        font-weight: bold;
-        border-radius: 5px;
-        transition: all .2s ease;
-        cursor: pointer;
+        font-size: 12px;
     }
-
+    .order-card-desc p{
+        font-size: 12px;
+    }
 }
 
 @media screen and (max-width:650px)
 {
+
     .card-image-wrapper img{
-        height: 130px;
-        width: 130px
+        height: 70px;
+        width: 70px
     }
-    .card-shipping-status{
-        margin-right: 1rem;
+    .order-card-title h2{
         font-size: 12px;
     }
-    .card-order-details{
-        width: 50%;
-        
+    .quantity-and-price p{
+     
+        font-size: 10px;
+    }
+    .order-card-desc p{
+        font-size: 10px;
     }
     
-    .card-order-date{
-        margin-right: 1rem;
-        font-size: 12px;
-    }
-    
-    .card-order-again{
-        margin-left: auto;
-    }
-    .card-quantity{
-        font-size: 12px;
-    }
-    .card-price{
-        font-size: 16px;
-    }
-    .card-description{
-        font-size: 15px;
-    }
-    .card-order-again button{
-        padding: 0.5rem 1rem;
-        font-size: 12px;
-    }
-    .order-cards-container{
-        width: 90%;
-    }
 }

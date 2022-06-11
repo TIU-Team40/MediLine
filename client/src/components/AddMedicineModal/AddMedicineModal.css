@@ -1,0 +1,125 @@
+.am_modal-background{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left:0;
+    background-color:rgba(128, 128, 128, 0.85);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.am_modal-background::-webkit-scrollbar{
+    display: none;
+}
+.am_edituserprofile-header h1{
+    text-align: center;
+    width: 100%;
+    position: relative;
+   
+   
+}
+.am_edituserprofile-header{
+    position: relative;
+}
+
+.am_edituserprofile-close-icon{
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.am_edituserprofile-wrapper{
+    height: max-content;
+    width: 60%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    
+}
+
+
+
+.am_content-wrapper{
+    height: 500px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.am_select-quantity{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter';
+    font-size: 25px;
+    margin: 1.5rem;
+}
+.am_select-quantity{
+    font-family: 'Inter';
+    font-size: 20px;
+}
+
+.am_quantity-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.am_quantity-div button{
+    background-color: var(--color-secondary);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 30px;
+    margin: 0.5rem;
+    padding: 0rem 0.6rem;
+    cursor: pointer;
+}
+
+.am_quantity{
+    font-size: 25px;
+}
+
+.add-medicine-button button{
+    color: white;
+    background-color: var(--color-primary);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 18px;
+    transition: all .3s ease;
+    cursor: pointer;
+    margin-top: 1rem;
+
+}
+
+.add-medicine-button button:hover{
+    transform: scale(1.1);
+    background-color: var(--color-primary-dark);
+}
+
+@media screen and (max-width: 650px)
+{
+    .am_edituserprofile-header h1{
+        font-size: 20px;
+    }
+    .am_edituserprofile-close-icon{
+        position: absolute;
+        top: -5px;
+        right: 0px;
+        cursor: pointer;
+    }
+    .am_select-quantity h3{
+        font-size: 15px;
+    }
+    .add-medicine-button button
+    {
+        font-size: 15px;
+    }
+}

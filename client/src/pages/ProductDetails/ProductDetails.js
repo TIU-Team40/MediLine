@@ -1,19 +1,16 @@
 import React, { useState, useContext, useEffect } from "react";
-import {
-  AiOutlineMinus,
-  AiOutlinePlus,
-  AiFillStar,
-  AiOutlineStar,
-} from "react-icons/ai";
+
 import CartContext from "../../context/Cart/CartContext";
 import { singleProduct } from "../../dummy_data";
 import "./ProductDetails.css";
 import "../../styles/global.css";
 import { useParams } from "react-router-dom";
-import { BsFillCartPlusFill, BsFillCartCheckFill} from "react-icons/bs";
+
 import { Link } from "react-router-dom";
 import ProductPageCard from '../../components/ProductPageCard/ProductPageCard'
-const ProductDetails = ({ product, similarProducts }) => {
+import SelectOrderShop from "../../components/SelectOrderShop/SelectOrderShop";
+import { shops } from "../../dummy_data";
+const ProductDetails = ({ product, similarProducts}) => {
  
   const [index, setIndex] = useState(0);
   const {
@@ -27,10 +24,7 @@ const ProductDetails = ({ product, similarProducts }) => {
   } = useContext(CartContext);
   const { _id } = useParams();
   const [cartButton, setCartButton] = useState(false)
-  const handleAddToCart = () =>{
-      setCartButton(true);
-      addToCart(product._id);
-  }
+
  
   return (
     <div>
@@ -69,47 +63,20 @@ const ProductDetails = ({ product, similarProducts }) => {
                   </p>
               </div>
               <p className="price"> ₹{product.price}</p>
+
+                    <h4>Select a shop: </h4>
+              <div className="select-your-shop">
+                      <SelectOrderShop shops={shops} product={product}/>
               <div className="buttons">
                   
               
-                {cartButton ? (
-                   
-
-                    <Link to="/cart">
-
-                    <button
-                    type="button"
-                    className="add-to-cart"
-                    onClick={() =>setCartButton(false)}
-                  >
-                   
-                    Go to Cart <BsFillCartCheckFill/>
-                  </button>
-                    </Link>
-                    
-                ): (
-
-                <button
-                  type="button"
-                  className="add-to-cart"
-                  onClick={handleAddToCart}
-                >
-                 
-                  Add to Cart <BsFillCartPlusFill/>
-                </button>
-                )
-                 }
+                
                 
                
                      
                 
-                 <Link to='/cart'>
-
-                <button type="button" className="buy-now" onClick={()=> addToCart(product._id)}>
-                  
-                  Buy Now
-                </button>
-                 </Link>
+                
+              </div>
               </div>
             </div>
           </div>

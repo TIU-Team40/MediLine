@@ -1,0 +1,96 @@
+.shop-profile-container{
+    max-width: 1100px;
+    width: 100%;
+    background-color: var(--color-bggrey);
+    padding-bottom: 4rem;
+}
+
+.shop-profile-container h1{
+    font-family: 'Gilroy-Bold';
+    margin: 1rem;
+}
+.shop-profile-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Inter';
+    font-size: 18px;
+    
+}
+.shop-profile-form
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+     border-radius: 5px;
+    background-color: #fff;
+    width: 50%;
+    height: fit-content;
+    font-family: 'Inter';
+}
+.shop-profile-form form{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 90%;
+    margin: 2rem 0;
+}
+
+.shop-profile-form form input{
+    width: 100%;
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 1px solid rgb(104, 104, 104, 0.5);
+    margin: 1rem 0;
+    font-size: 17px;
+    transition: all .2s ease;
+}
+
+.shop-profile-form form input:focus{
+
+    outline: none;
+    border-bottom: 2px solid rgb(104, 104, 104, 0.7);
+}
+
+.password-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.password-button button{
+
+    font-family: 'Inter';
+    font-size: 17px;
+    color: white;
+    background-color: var(--color-secondary);
+    border: none;
+    padding: .5rem 1.75rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+
+}
+
+.password-button button:hover{
+    background-color: var(--color-secondary-dark);
+}
+
+@media screen and (max-width:650px)
+{
+    .shop-profile-form{
+        width: 90%;
+    }
+    .shop-profile-form form {
+        font-size: 13px;
+    }
+    .password-button button{
+        font-size: 13px;
+        text-transform: capitalize;
+        padding: 0.5rem 1rem;
+    }
+}

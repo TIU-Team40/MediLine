@@ -15,14 +15,16 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const isLoggedIn = true;
-  const isShopowner = true;
+  
   const [open, setOpen] = useState(false);
   const [notificationOpen, setNotificationOpen] = useState(false);
   const {  cartItems, totalItem } = useContext(CartContext);
   return (
-    <>
+    
 
       <nav className="main-nav">
+
+      
         <div className="logo">
           <h3>
             <Link to="/">MediLine</Link>
@@ -161,7 +163,7 @@ const Navbar = () => {
           )}
         </div>
       </nav>
-    </>
+   
   );
 };
 
