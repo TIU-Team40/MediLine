@@ -4,7 +4,7 @@
     align-items: center;
     flex-direction: column;
     max-width: 1100px;
-    
+    font-family: 'Inter';
     width: 100%;
     background-color: var(--color-bggrey);
     padding: 1rem 0;
@@ -21,6 +21,9 @@
 
 .orders-wrapper{
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .orders-subheading
 {
@@ -44,5 +47,8 @@
     .orders-subheading{
         margin: 0;
         padding-left: 1rem;
+    }
+    .orders-wrapper{
+        width: 100%;
     }
 }

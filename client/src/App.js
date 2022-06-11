@@ -24,10 +24,15 @@ import CreateAnAccountShop from "./components/CreateAnAccountShop/CreateAnAccoun
 import UploadPrescription from "./pages/UploadPrescription/UploadPrescription";
 import UserProfile from "./pages/UserProfile/UserProfile";
 import UserAddress from "./pages/UserAddress/UserAddress";
+import ShopNotification from "./pages/ShopOwner/ShopNotification/ShopNotification";
+import NavbarSwitcher from "./components/NavbarSwitcher/NavbarSwitcher";
+import Inventory from "./pages/ShopOwner/Inventory/Inventory";
+import ShopOrders from "./pages/ShopOwner/ShopOrders/ShopOrders";
+import ShopProfile from "./pages/ShopOwner/ShopProfile/ShopProfile";
 function App() {
   return (
     <div className="container">
-      <Navbar />
+      <NavbarSwitcher />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductListing />} />
@@ -38,6 +43,7 @@ function App() {
             <ProductDetails
               product={singleProduct}
               similarProducts={newSearchBarTest}
+              
             />
           }
         />
@@ -67,6 +73,10 @@ function App() {
         <Route path="/uploadprescription" element={<UploadPrescription />} />
         <Route path="/userprofile" element={<UserProfile info={userInfo} />} />
         <Route path="/useraddress" element={<UserAddress info={userInfo} />} />
+        <Route path='/shopnotification' element={<ShopNotification/>}/>
+        <Route path='/shopinventory' element={<Inventory/>}/>
+        <Route path='/shoporders' element={<ShopOrders/>}/>
+        <Route path='/shopprofile' element={<ShopProfile/>}/>
       </Routes>
       <Footer />
     </div>

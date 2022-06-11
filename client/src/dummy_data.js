@@ -260,7 +260,7 @@ export const homepage_category = [
      dob:'02/05/1999',
      phoneNumber: '7001345668',
      emailId: 'nilankoorb@gmail.com',
-     addressLine1: 'Debinagar, Maynaguri',
+     addressLine1: 'Debinagar, Maynaguri, Jalpaiguri',
      addressLine2: 'Jalpaiguri',
      state: 'West Bengal',
   

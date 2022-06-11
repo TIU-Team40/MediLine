@@ -1,0 +1,28 @@
+.shopowner-notification-container{
+    max-width: 1100px;
+    width: 100%;
+    height: max-content;
+    background-color: var(--color-bggrey);
+    padding-bottom: 4rem;
+}
+
+.shopowner-notification-wrapper{
+ 
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.shopowner-notification-container h1{
+    font-family: 'Gilroy-Bold';
+    margin: 1rem;
+}
+
+@media screen and (max-width: 768px)
+{
+    .shopowner-notification-container{
+        width: 90%;
+    }
+}
