@@ -26,11 +26,18 @@ const pharmacySchema = mongoose.Schema({
     type: String,
     default: "pharmacy",
   },
+  picture: {
+    type: String,
+  },
   address: {
     type: String,
     required: [true, "Address Line required"],
   },
   pinCode: {
+    type: String,
+    require: true,
+  },
+  area: {
     type: String,
     require: true,
   },
@@ -60,11 +67,13 @@ const pharmacySchema = mongoose.Schema({
     required: true,
     default: 4.5,
   },
-  notification: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Notification",
-    require: true,
-  },
+  notifications: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Notification",
+      require: true,
+    },
+  ],
   orders: [
     {
       type: mongoose.Schema.Types.ObjectId,

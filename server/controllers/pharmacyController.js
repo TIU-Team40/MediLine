@@ -6,10 +6,19 @@ const { extend } = require("lodash");
 const validator = require("validator");
 const { UserNotification } = require("../utils/getNotification");
 
+exports.getAllPharmacies = BigPromise(async (req, res) => {
+  const pharmacies = await Pharmacy.find();
+
+  res.status(200).json({
+    success: true,
+    pharmacies,
+  });
+});
+
 exports.signup = BigPromise(async (req, res) => {
   const { name, email, password, contactNo, address, pinCode } = req.body;
 
-  if (!name || !email || !password || contactNo || address || pinCode) {
+  if (!name || !email || !password || !contactNo || !address || !pinCode) {
     return res.json({
       success: false,
       message: "All fields are required !!",
@@ -22,7 +31,7 @@ exports.signup = BigPromise(async (req, res) => {
       message: "Enter correct email format.",
     });
 
-  const userAlreadyExist = await User.findOne({ email });
+  const userAlreadyExist = await Pharmacy.findOne({ email });
 
   if (userAlreadyExist)
     return res.json({
@@ -51,7 +60,7 @@ exports.login = BigPromise(async (req, res) => {
       message: "Email and Password both required",
     });
 
-  const pharmacy = await Medicine.findOne({ email })
+  const pharmacy = await Pharmacy.findOne({ email })
     .select("+password")
     .populate("inventory.medicine")
     .populate("orders");
@@ -70,14 +79,14 @@ exports.login = BigPromise(async (req, res) => {
       message: "Incorrect Password !!",
     });
 
-  const allNotifications = await Notification.find()
-    .populate("fromUser")
-    .populate("order")
-    .populate("toUser");
+  // const allNotifications = await Notification.find()
+  //   .populate("fromUser")
+  //   .populate("order")
+  //   .populate("toUser");
 
-  const userNotification = UserNotification(pharmacy._id, allNotifications);
+  // const userNotification = UserNotification(pharmacy._id, allNotifications);
 
-  pharmacy.notification = userNotification;
+  // pharmacy.notification = userNotification;
 
   cookieToken(pharmacy, res);
 });

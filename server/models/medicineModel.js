@@ -14,15 +14,11 @@ const medicineSchema = mongoose.Schema({
     required: [true, "Price of the Product Required."],
     maxLength: [6, "Product price should be less than 6 digits."],
   },
-  offerPrice: {
-    type: Number,
-    required: [true, "Price before discount of the Product Required."],
-  },
   description: {
     type: String,
     required: true,
   },
-  category: [{ type: String, required: true }],
+  category: { type: String },
   seasons: [{ type: String, required: true }],
   diseases: [
     {
@@ -34,10 +30,10 @@ const medicineSchema = mongoose.Schema({
   ratings: {
     type: Number,
     required: true,
-    default: 4.5
+    default: 4.5,
   },
   perUnitQuantity: {
-    type: String,
+    type: Number,
     required: true,
   },
   createdAt: {

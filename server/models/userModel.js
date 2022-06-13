@@ -22,6 +22,10 @@ const userSchema = mongoose.Schema({
     minLength: [6, "Password should be atleast 6 char"],
     select: false,
   },
+  contactNo: {
+    type: String,
+    require: true,
+  },
   role: {
     type: String,
     default: "user",

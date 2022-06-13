@@ -5,7 +5,7 @@ const diseaseSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  information: {
+  description: {
     type: String,
     required: true,
   },

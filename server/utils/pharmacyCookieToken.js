@@ -10,7 +10,7 @@ module.exports = async (pharmacy, res) => {
   
     pharmacy.password = undefined;
   
-    return res.status(201).cookie("token", userToken, cookieOptions).json({
+    return res.status(201).cookie("token", pharmacyToken, cookieOptions).json({
       success: true,
       pharmacy,
       pharmacyToken,

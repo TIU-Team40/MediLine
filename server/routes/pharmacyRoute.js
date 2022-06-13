@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const {
+  getAllPharmacies,
   signup,
   login,
   logout,
@@ -16,6 +17,7 @@ const {
 const { isPharmacyLoggedIn } = require("../middlewares/pharmacy");
 
 // Login Routes
+router.route("/").get(getAllPharmacies);
 router.route("/signup").post(signup);
 router.route("/login").post(login);
 router.route("/logout").get(logout);

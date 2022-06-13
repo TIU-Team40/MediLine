@@ -18,14 +18,14 @@ exports.isLoggedIn = async (req, res, next) => {
     .populate("addresses")
     .populate("orders");
 
-  const allNotifications = await Notification.find()
-    .populate("fromUser")
-    .populate("post")
-    .populate("toUser");
+  // const allNotifications = await Notification.find()
+  //   .populate("fromUser")
+  //   .populate("post")
+  //   .populate("toUser");
 
-  const userNotification = UserNotification(user._id, allNotifications);
+  // const userNotification = UserNotification(user._id, allNotifications);
 
-  user.notification = userNotification;
+  // user.notification = userNotification;
 
   req.user = user;
 

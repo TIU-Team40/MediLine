@@ -12,9 +12,9 @@ const validator = require("validator");
 const { UserNotification } = require("../utils/getNotification");
 
 exports.signup = BigPromise(async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, contactNo } = req.body;
 
-  if (!name || !email || !password) {
+  if (!name || !email || !password || !contactNo) {
     return res.json({
       success: false,
       message: "All fields are required !!",
@@ -76,14 +76,14 @@ exports.login = BigPromise(async (req, res) => {
       message: "Incorrect Password !!",
     });
 
-  const allNotifications = await Notification.find()
-    .populate("fromUser")
-    .populate("post")
-    .populate("toUser");
+  // const allNotifications = await Notification.find()
+  //   .populate("fromUser")
+  //   .populate("post")
+  //   .populate("toUser");
 
-  const userNotification = UserNotification(user._id, allNotifications);
+  // const userNotification = UserNotification(user._id, allNotifications);
 
-  user.notification = userNotification;
+  // user.notification = userNotification;
 
   cookieToken(user, res);
 });
@@ -338,7 +338,7 @@ exports.updateCartQuantity = BigPromise(async (req, res) => {
   const { medicineId, quantity } = req.body;
 
   const newCart = user.cart.map((prod) => {
-    if (prod.product._id.toString() === medicineId) {
+    if (prod.medicine._id.toString() === medicineId) {
       prod.quantity = quantity;
     }
     return prod;

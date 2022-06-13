@@ -9,7 +9,7 @@ exports.isPharmacyLoggedIn = async (req, res, next) => {
   const token = req.cookies.token;
 
   if (!token)
-    return res.json({ success: false, message: "Please Login First" });
+    return res.json({ success: false, message: "Please Login as Pharmacy First" });
 
   const decode = jwt.verify(token, process.env.JWT_SECRET_KEY);
 
@@ -17,14 +17,14 @@ exports.isPharmacyLoggedIn = async (req, res, next) => {
     .populate("inventory.medicine")
     .populate("orders");
 
-  const allNotifications = await Notification.find()
-    .populate("fromUser")
-    .populate("post")
-    .populate("toUser");
+  // const allNotifications = await Notification.find()
+  //   .populate("fromUser")
+  //   .populate("post")
+  //   .populate("toUser");
 
-  const userNotification = UserNotification(pharmacy._id, allNotifications);
+  // const userNotification = UserNotification(pharmacy._id, allNotifications);
 
-  pharmacy.notification = userNotification;
+  // pharmacy.notification = userNotification;
 
   req.pharmacy = pharmacy;
 

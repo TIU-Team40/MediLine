@@ -1,4 +1,5 @@
 const Medicine = require("../models/medicineModel");
+const Disease = require("../models/diseaseModel");
 const BigPromise = require("../middlewares/bigPromise");
 
 //   name,
@@ -14,10 +15,12 @@ const BigPromise = require("../middlewares/bigPromise");
 
 exports.getMedicine = BigPromise(async (req, res) => {
   const medicines = await Medicine.find();
+  const diseases = await Disease.find();
 
   res.status(201).json({
     success: true,
     medicines,
+    diseases,
   });
 });
 
