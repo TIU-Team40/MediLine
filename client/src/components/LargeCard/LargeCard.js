@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext, useState} from "react";
+import { useContext, useState } from "react";
 import classes from "./LargeCard.module.css";
 import "../../styles/global.css";
 import { BsFillCartPlusFill, BsFillCartDashFill } from "react-icons/bs";
@@ -14,30 +14,27 @@ const LargeCard = ({ data }) => {
   const navigate = useNavigate();
   return (
     <div className={classes.largeCardContainer}>
-   
-        <div className={classes.largeCardWrapper} >
-          <div className={classes.largeCardImageWrapper}>
-        <Link to={`/product/${data._id}`}>
+      <div className={classes.largeCardWrapper}>
+        <div className={classes.largeCardImageWrapper}>
+          <Link to={`/product/${data._id}`}>
             <div className={classes.largeCardImage}>
-              <img src={data.imageUrl} alt="product image" />
+              <img src={data.picture} alt="product image" />
             </div>
-            </Link>
+          </Link>
+        </div>
+        <div className={classes.largeCardContent}>
+          <div className={classes.largeCardTitle}>
+            <h3> {data.name}</h3>{" "}
           </div>
-          <div className={classes.largeCardContent}>
-            <div className={classes.largeCardTitle}>
-              <h3> {data.title}</h3>{" "}
-            </div>
-            <div className={classes.largeCardSmallDesc}>{data.description}</div>
-            <div className={classes.largeCardDesc}>{data.bigDescription}</div>
-            <div className={classes.largeCardPrice}>
-              <p> ₹{data.price}</p>
-            </div>
-            </div>
-           
-            </div>
-         
+          <div className={classes.largeCardSmallDesc}>{data.description}</div>
+          {/* <div className={classes.largeCardDesc}>{data.bigDescription}</div> */}
+          <div className={classes.largeCardPrice}>
+            <p> ₹{data.price}</p>
+          </div>
+        </div>
+      </div>
 
-              {/* <div className={classes.cartButton}>
+      {/* <div className={classes.cartButton}>
                 {
                   cartItems.some(p =>p._id === data._id) ? (
                     
@@ -51,10 +48,7 @@ const LargeCard = ({ data }) => {
                       
                     }
                   </div> */}
-
-          
-    
-        </div>
+    </div>
   );
 };
 

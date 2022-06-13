@@ -1,36 +1,34 @@
-import React from 'react'
-import {MdLocationPin} from 'react-icons/md'
-import './LocationFinder.css'
-import '../../styles/global.css'
-import { locationArray } from '../../dummy_data'
+import React from "react";
+import { MdLocationPin } from "react-icons/md";
+import "./LocationFinder.css";
+import "../../styles/global.css";
+import { useMedicine } from "../../context/Medicine/MedicineContext";
+
 const LocationFinder = () => {
-    const locationFinderHandler = () => {
-        console.log("location finder clicked");
-    }
+  const { currentLocation, setCurrentLocation } = useMedicine();
   return (
-    <div className='location-container'>
-      
-
-        <div className="location-name">
-        <div className='location-icon'><MdLocationPin size="2rem" className='icon'/></div>
-      
-          
-            
-          <select className='select-location'>
-            <option value="#1" className='select-location-option'>New Town</option>
-            <option value="#2" className='select-location-option'>Salt Lake</option>
-            <option value="#3" className='select-location-option'>Bangur</option>
-            <option value="#4" className='select-location-option'>Lake Town</option>
-          </select>
-
-            
-          
-        
+    <div className="location-container">
+      <div className="location-name">
+        <div className="location-icon">
+          <MdLocationPin size="2rem" className="icon" />
         </div>
 
-        
+        <select
+          className="select-location"
+          value={currentLocation}
+          onChange={(e) => {
+            localStorage.setItem("location", e.target.value);
+            setCurrentLocation(e.target.value);
+          }}
+        >
+          <option className="select-location-option">Newtown</option>
+          <option className="select-location-option">Saltlake</option>
+          <option className="select-location-option">Bangur</option>
+          <option className="select-location-option">Laketown</option>
+        </select>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default LocationFinder
+export default LocationFinder;

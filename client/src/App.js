@@ -1,7 +1,5 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
 import "./App.css";
-
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
@@ -10,7 +8,7 @@ import ProductListing from "./pages/ProductListing/ProductListing";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Orders from "./pages/Orders/Orders";
 import LogIn from "./pages/LogIn/LogIn";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Cart from "./pages/Cart/Cart";
 import {
   searchBarTest,
@@ -29,27 +27,82 @@ import NavbarSwitcher from "./components/NavbarSwitcher/NavbarSwitcher";
 import Inventory from "./pages/ShopOwner/Inventory/Inventory";
 import ShopOrders from "./pages/ShopOwner/ShopOrders/ShopOrders";
 import ShopProfile from "./pages/ShopOwner/ShopProfile/ShopProfile";
+import loadInitialData from "./utils/loadInitialData";
+import { useAuth } from "./context/Auth/AuthContext";
+import { Loader } from "./components/Loader/Loader";
+import { PrivateRoute } from "./utils/PrivateRoute";
+
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const {
+    userState,
+    userDispatch,
+    pharmacyDispatch,
+    networkLoader,
+    medicineDisease,
+    setMedicineDisease,
+    pharmacies,
+    setPharmacies,
+  } = useAuth();
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  console.log(userState.cart);
+  useEffect(() => {
+    loadInitialData(
+      userDispatch,
+      pharmacyDispatch,
+      setMedicineDisease,
+      setPharmacies,
+      navigate,
+      setIsLoading
+    );
+  }, []);
+
+  if (isLoading) {
+    return (
+      <>
+        <NavbarSwitcher />
+        <div className="loader">
+          <Loader />
+        </div>
+        <Footer />
+      </>
+    );
+  }
+
   return (
     <div className="container">
       <NavbarSwitcher />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductListing />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route
+          path="/cart"
+          element={
+            <PrivateRoute>
+              <Cart />
+            </PrivateRoute>
+          }
+        />
         <Route
           path="/product/:_id"
           element={
             <ProductDetails
               product={singleProduct}
               similarProducts={newSearchBarTest}
-              
             />
           }
         />
         <Route path="/selectshop" element={<SelectShop />} />
         <Route path="/login" element={<LogIn />} />
-        <Route path="/orders" element={<Orders orders={searchBarTest} />} />
+        <Route
+          path="/orders"
+          element={
+            <PrivateRoute>
+              <Orders orders={searchBarTest} />
+            </PrivateRoute>
+          }
+        />
         <Route
           path="/createanaccount"
           element={
@@ -70,13 +123,62 @@ function App() {
             />
           }
         />
-        <Route path="/uploadprescription" element={<UploadPrescription />} />
-        <Route path="/userprofile" element={<UserProfile info={userInfo} />} />
-        <Route path="/useraddress" element={<UserAddress info={userInfo} />} />
-        <Route path='/shopnotification' element={<ShopNotification/>}/>
-        <Route path='/shopinventory' element={<Inventory/>}/>
-        <Route path='/shoporders' element={<ShopOrders/>}/>
-        <Route path='/shopprofile' element={<ShopProfile/>}/>
+        <Route
+          path="/uploadprescription"
+          element={
+            <PrivateRoute>
+              <UploadPrescription />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/userprofile"
+          element={
+            <PrivateRoute>
+              <UserProfile info={userInfo} />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/useraddress"
+          element={
+            <PrivateRoute>
+              <UserAddress info={userInfo} />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/shopnotification"
+          element={
+            <PrivateRoute>
+              <ShopNotification />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/shopinventory"
+          element={
+            <PrivateRoute>
+              <Inventory />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/shoporders"
+          element={
+            <PrivateRoute>
+              <ShopOrders />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/shopprofile"
+          element={
+            <PrivateRoute>
+              <ShopProfile />
+            </PrivateRoute>
+          }
+        />
       </Routes>
       <Footer />
     </div>
