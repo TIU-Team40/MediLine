@@ -25,7 +25,7 @@ export default async function loadInitialData(
   }
   // else toast("Cannot connect to server.");
 
-  if (session.userId) {
+  if (session && session.userId) {
     if (type === "user") {
       const userData = await userDashboard();
       const pharmacies = await pharmaciesCall();
