@@ -17,7 +17,9 @@ export default async function loadInitialData(
   const session = JSON.parse(localStorage.getItem("session"));
   const type = JSON.parse(localStorage.getItem("type"));
   const data = await getMedicineAndDisease();
-  if (data.success) {
+  const pharmacies = await pharmaciesCall();
+  if (data.success || pharmacies.success) {
+    setPharmacies(pharmacies.pharmacies);
     setMedicineDisease({
       medicines: data.medicines,
       diseases: data.diseases,
@@ -28,12 +30,10 @@ export default async function loadInitialData(
   if (session && session.userId) {
     if (type === "user") {
       const userData = await userDashboard();
-      const pharmacies = await pharmaciesCall();
-      if (!userData.success || !pharmacies.success) {
+      if (!userData.success) {
         userDispatch({ type: "END_USER_SESSION" });
         navigate("/login", { replace: true });
       } else {
-        setPharmacies(pharmacies.pharmacies);
         userDispatch({ type: "START_USER_SESSION", payload: userData.user });
       }
     } else if (type === "pharmacy") {
