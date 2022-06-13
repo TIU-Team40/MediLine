@@ -36,7 +36,7 @@ exports.addMedicine = BigPromise(async (req, res) => {
 exports.addDiseaseToMedicine = BigPromise(async (req, res) => {
   const medicine = await Medicine.findById(req.params.id);
 
-  medicine.diseases = [...medicine.diseases, ...req.body.disease];
+  medicine.diseases = [...medicine.diseases, ...req.body.diseases];
 
   await medicine.save();
 
