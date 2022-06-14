@@ -358,18 +358,9 @@ exports.updateCartQuantity = BigPromise(async (req, res) => {
 // Address Controllers
 exports.addAddress = BigPromise(async (req, res) => {
   const user = req.user;
-  const { name, addressLine, city, state, country, pinCode, contactNo } =
-    req.body;
+  const { name, addressLine, city, state, pinCode, contactNo } = req.body;
 
-  if (
-    !name |
-    !addressLine |
-    !city |
-    !state |
-    !country |
-    !pinCode |
-    !contactNo
-  ) {
+  if (!name | !addressLine | !city | !state | !pinCode | !contactNo) {
     return res.json({
       success: false,
       message: "All fields are required !!",
@@ -381,7 +372,6 @@ exports.addAddress = BigPromise(async (req, res) => {
     addressLine,
     city,
     state,
-    country,
     pinCode,
     contactNo,
     user: user._id,
@@ -426,6 +416,30 @@ exports.deleteAddress = BigPromise(async (req, res) => {
   res.status(200).json({
     success: true,
     updatedAddress,
+  });
+});
+
+exports.setPrimaryAddress = BigPromise(async (req, res) => {
+  const user = req.user;
+  const address = await Address.findById(req.body.addressId);
+
+  address.isPrimary = true;
+
+  await address.save();
+
+  const addressId = user.addresses.find(
+    (address) => address.isPrimary === true
+  );
+
+  const address1 = await Address.findById(addressId);
+
+  address1.isPrimary = false;
+
+  await address1.save();
+
+  res.status(200).json({
+    success: true,
+    user,
   });
 });
 

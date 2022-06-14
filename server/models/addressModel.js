@@ -19,7 +19,7 @@ const addressSchema = mongoose.Schema({
   },
   country: {
     type: String,
-    require: true,
+    default: "India",
   },
   pinCode: {
     type: String,
@@ -28,6 +28,10 @@ const addressSchema = mongoose.Schema({
   contactNo: {
     type: String,
     require: true,
+  },
+  isPrimary: {
+    type: Boolean,
+    default: false,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,

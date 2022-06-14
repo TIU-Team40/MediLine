@@ -18,6 +18,7 @@ const {
   addAddress,
   editAddress,
   deleteAddress,
+  setPrimaryAddress,
   createOrder,
   cancelOrder,
   adminUsers,
@@ -57,6 +58,7 @@ router.route("/user/emptycart").delete(isLoggedIn, emptyCart);
 
 // Address Route
 router.route("/user/address").post(isLoggedIn, addAddress);
+router.route("/address/primary").post(isLoggedIn, setPrimaryAddress)
 router
   .route("/user/address/:addressId")
   .post(isLoggedIn, editAddress)
