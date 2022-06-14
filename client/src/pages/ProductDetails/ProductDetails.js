@@ -5,13 +5,15 @@ import { singleProduct } from "../../dummy_data";
 import "./ProductDetails.css";
 import "../../styles/global.css";
 import { useParams } from "react-router-dom";
-
+import LocationFinder from'../../components/LocationFinder/LocationFinder'
 import { Link } from "react-router-dom";
 import ProductPageCard from "../../components/ProductPageCard/ProductPageCard";
 import SelectOrderShop from "../../components/SelectOrderShop/SelectOrderShop";
 import { shops } from "../../dummy_data";
 import { useAuth } from "../../context/Auth/AuthContext";
 import { useMedicine } from "../../context/Medicine/MedicineContext";
+import { searchBarTest } from "../../dummy_data";
+import SearchBar from "../../components/SearchBar/SearchBar";
 const ProductDetails = ({ similarProducts }) => {
   const [index, setIndex] = useState(0);
   const {
@@ -38,6 +40,13 @@ const ProductDetails = ({ similarProducts }) => {
   return (
     <div>
       <div className="product-detail-container">
+        <div className="product-detail-header">
+          <LocationFinder/>
+          <SearchBar data={searchBarTest} placeholder="Seach for diseases / medicines"/>
+        </div>
+        <div className="product-main-content">
+
+      
         <div>
           <div className="image-container">
             <img src={medicine.picture} className="product-detail-image" />
@@ -84,6 +93,7 @@ const ProductDetails = ({ similarProducts }) => {
             <ProductPageCard key={item._id} product={item} />
           ))}
         </div>
+      </div>
       </div>
     </div>
   );
