@@ -38,10 +38,7 @@ function App() {
     userState,
     userDispatch,
     pharmacyDispatch,
-    networkLoader,
-    medicineDisease,
     setMedicineDisease,
-    pharmacies,
     setPharmacies,
   } = useAuth();
   const navigate = useNavigate();
