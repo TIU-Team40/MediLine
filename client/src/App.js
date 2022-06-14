@@ -44,9 +44,7 @@ function App() {
     pharmacies,
     setPharmacies,
   } = useAuth();
-  const { pathname } = useLocation();
   const navigate = useNavigate();
-  console.log(userState.orders);
   useEffect(() => {
     loadInitialData(
       userDispatch,

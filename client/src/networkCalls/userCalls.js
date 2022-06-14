@@ -187,9 +187,8 @@ export const addAddress = async (
   addressLine,
   city,
   state,
-  country,
   pinCode,
-  conatctNo
+  contactNo
 ) => {
   try {
     const { data } = await axios({
@@ -200,9 +199,8 @@ export const addAddress = async (
         addressLine,
         city,
         state,
-        country,
         pinCode,
-        conatctNo,
+        contactNo,
       },
     });
     return data;
@@ -211,16 +209,15 @@ export const addAddress = async (
   }
 };
 
-export const editAddress = async ({
+export const editAddress = async (
   addressId,
   name,
   addressLine,
   city,
   state,
-  country,
   pinCode,
-  contactNo,
-}) => {
+  contactNo
+) => {
   try {
     const { data } = await axios({
       method: "post",
@@ -230,7 +227,6 @@ export const editAddress = async ({
         addressLine,
         city,
         state,
-        country,
         pinCode,
         contactNo,
       },
@@ -246,6 +242,22 @@ export const deleteAddress = async (addressId) => {
     const { data } = await axios({
       method: "delete",
       url: `${REACT_APP_BACKEND_URL}/user/address/${addressId}`,
+    });
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const setPrimaryAddress = async (addressId) => {
+  try {
+    console.log(addressId);
+    const { data } = await axios({
+      method: "post",
+      url: `${REACT_APP_BACKEND_URL}/address/primary`,
+      data: {
+        addressId,
+      },
     });
     return data;
   } catch (err) {

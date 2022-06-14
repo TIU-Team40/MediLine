@@ -3,7 +3,9 @@ import "./CartUserInfo.css";
 import "../../styles/global.css";
 import { Link } from "react-router-dom";
 const CartUserInfo = ({ information }) => {
-  const address = information.addresses[0];
+  const address = information.addresses.find(
+    (address) => address.isPrimary === true
+  );
   return (
     <div className="user-info-container">
       <div className="username">

@@ -17,7 +17,7 @@ export function userReducer(acc, action) {
 
     case "EDIT_ADDRESS":
       const addresses = acc.addresses.filter(
-        (item) => item._id !== action.payload.addressId
+        (item) => item._id.toString() !== action.payload.addressId
       );
       const updatedAddresses = [...addresses, action.payload.address];
       return { ...acc, addresses: updatedAddresses };
@@ -28,6 +28,22 @@ export function userReducer(acc, action) {
         addresses: acc.addresses.filter(
           (address) => address._id !== action.payload
         ),
+      };
+
+    case "SET_PRIMARY_ADDRESS":
+      const updatedAddress = acc.addresses.map((address) => {
+        if (address.isPrimary) address.isPrimary = false;
+        return address;
+      });
+      console.log(updatedAddress);
+      const addressess = updatedAddress.map((address) => {
+        if (address._id.toString() === action.payload) address.isPrimary = true;
+        return address;
+      });
+      console.log(addressess);
+      return {
+        ...acc,
+        addresses: addressess,
       };
 
     case "ADD_TO_ORDER":
@@ -57,6 +73,15 @@ export function userReducer(acc, action) {
             : item;
         }),
       };
+
+    case "UPDATE_USER": {
+      return {
+        ...acc,
+        name: action.payload.name,
+        email: action.payload.email,
+        contactNo: action.payload.contactNo,
+      };
+    }
 
     case "CREATE_USER_SESSION": {
       localStorage.setItem(
