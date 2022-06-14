@@ -4,10 +4,13 @@ import "../../styles/global.css";
 import OrderCards from "../OrderCards/OrderCards";
 
 const SingleOrderCard = ({ order, disabled }) => {
+  const [contactPharmacy, setContactPharmacy] = useState(false)
+
   function getDate(orderDate) {
     const date = new Date(orderDate);
     return date.toDateString();
   }
+
 
   return (
     <div className="single-order-container">
