@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import "./styles/global.css";
@@ -31,6 +30,7 @@ import loadInitialData from "./utils/loadInitialData";
 import { useAuth } from "./context/Auth/AuthContext";
 import { Loader } from "./components/Loader/Loader";
 import { PrivateRoute } from "./utils/PrivateRoute";
+import DiseaseDetails from "./pages/DiseaseDetails/DiseaseDetails";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -46,7 +46,7 @@ function App() {
   } = useAuth();
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  console.log(userState.cart);
+  console.log(userState.orders);
   useEffect(() => {
     loadInitialData(
       userDispatch,
@@ -86,20 +86,16 @@ function App() {
         />
         <Route
           path="/product/:_id"
-          element={
-            <ProductDetails
-              product={singleProduct}
-              similarProducts={newSearchBarTest}
-            />
-          }
+          element={<ProductDetails similarProducts={newSearchBarTest} />}
         />
+        <Route path="/disease/:diseaseId" element={<DiseaseDetails />} />
         <Route path="/selectshop" element={<SelectShop />} />
         <Route path="/login" element={<LogIn />} />
         <Route
           path="/orders"
           element={
             <PrivateRoute>
-              <Orders orders={searchBarTest} />
+              <Orders />
             </PrivateRoute>
           }
         />

@@ -49,9 +49,9 @@ const Navbar = () => {
         <li>
           <Link to="/cart">
             <div className="cart-block">
-              <a href="/cart" className="cart-text">
+              <span href="/cart" className="cart-text">
                 Cart
-              </a>
+              </span>
 
               {isLoggedIn && (
                 <span className="item-counter">{userState.cart.length}</span>
