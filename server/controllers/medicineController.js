@@ -14,8 +14,8 @@ const BigPromise = require("../middlewares/bigPromise");
 //   perUnitQuantity,
 
 exports.getMedicine = BigPromise(async (req, res) => {
-  const medicines = await Medicine.find();
-  const diseases = await Disease.find();
+  const medicines = await Medicine.find().populate("diseases");
+  const diseases = await Disease.find().populate("medicines");
 
   res.status(201).json({
     success: true,
