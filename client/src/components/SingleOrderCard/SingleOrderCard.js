@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./SingleOrderCard.css";
 import "../../styles/global.css";
 import OrderCards from "../OrderCards/OrderCards";
@@ -13,6 +13,7 @@ const SingleOrderCard = ({ data, address, disabled }) => {
     pinCode,
     state,
   } = address;
+  const [contactPharmacy, setContactPharmacy] = useState(false);
   return (
     <div className="single-order-container">
       <div className="single-order-header">
@@ -32,9 +33,25 @@ const SingleOrderCard = ({ data, address, disabled }) => {
           </p>
           <h4>Order Summary: </h4>
         </div>
-        <div className="contact-pharmacy" id={disabled}>
-          <button type="button">Contact Pharmacy </button>
-        </div>
+        {
+          contactPharmacy ? 
+        
+          
+          (
+            <div className="contact-pharmacy" id={disabled}>
+            <p>+91-786543820</p>
+          </div>
+          ) 
+          :
+          (
+            
+
+              <div className="contact-pharmacy" id={disabled}>
+                <button type="button" onClick={()=>setContactPharmacy(true)}>Contact Pharmacy </button>
+              </div>
+                
+          )
+        }
       </div>
       <div className="single-order-wrapper">
         {data.slice(0, 3).map((products) => {

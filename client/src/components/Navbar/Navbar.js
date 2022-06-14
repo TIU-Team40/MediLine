@@ -59,9 +59,7 @@ const Navbar = () => {
             </div>
           </Link>
         </li>
-        <li>
-          <Link to="/consult">Consult</Link>
-        </li>
+        
       </ul>
 
       {!isLoggedIn ? (

@@ -38,6 +38,7 @@ select{
 
 .product-list-container{
     background-color: var(--color-bggrey);
+    padding-bottom: 4rem;
 }
 
 @media screen and (max-width: 768px)

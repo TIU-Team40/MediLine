@@ -109,8 +109,10 @@
         margin: 2rem;
     }
     .cart-heading{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
+       
     }
+   
     .cart-products-container{
         width: 650px;
         height: fit-content;

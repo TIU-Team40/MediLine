@@ -1,0 +1,161 @@
+.medicine-image-wrapper img{
+    height: 150px;
+    width: 150px;
+}
+.medicine-image-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.inventory-list-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin: 2rem;
+    font-family: 'Inter';
+    height: fit-content;
+}
+
+.inventory-list-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.inventory-list-items
+{
+    background-color: #fff;
+    display: flex;
+    box-shadow: 1px 1px 5px 2px rgba(118, 118, 118, 0.4);
+    margin: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.medicine-content{
+    margin: 2rem;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+
+}
+
+.medicine-title{
+    font-family: 'Gilroy-Medium';
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0.5rem 0;
+}
+
+.medicine-buttons{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  
+}
+
+.medicine-buttons button{
+    margin: 10px;
+}
+
+.edit-price-button{
+    border: 1px solid var(--color-secondary);
+    background: transparent;
+    font-size: 12px;
+    font-family: 'Inter';
+    border-radius: 5px;
+    color: var(--color-secondary);
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.edit-price-button:hover{
+    background-color: var(--color-secondary);
+    color: white;
+
+}
+.remove-button{
+    border: 1px solid red;
+    background: red;
+    font-size: 12px;
+    font-family: 'Inter';
+    border-radius: 5px;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.remove-button:hover{
+    background-color: white;
+    color: red;
+
+}
+
+@media screen and (max-width:768px)
+{
+    .medicine-buttons button{
+        padding: 0.5rem 1rem;
+         margin: 1rem;
+    }
+    .medicine-content{
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%;
+        
+    
+    }
+    
+    .medicine-image-wrapper img{
+        height: 140px;
+        width: 140px;
+    }
+    .medicine-image-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+
+@media screen and (max-width: 650px)
+{
+    .medicine-buttons button{
+        padding: 0.3rem 0.8rem;
+        font-size: 11px;
+        margin: 0 0.2rem;
+        margin-top: 1rem;
+        
+    }
+    .medicine-buttons{
+        justify-content: space-between;
+        align-items: space-between;
+        width: 100%;
+    }
+    .medicine-content{
+        font-size: 12px;
+
+    }
+    .medicine-image-wrapper img{
+        height: 110px;
+        width: 110px;
+    }
+    .medicine-title{
+        font-size: 13px;
+    }
+}

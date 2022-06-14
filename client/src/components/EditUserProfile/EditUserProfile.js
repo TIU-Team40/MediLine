@@ -5,8 +5,7 @@ import {GrFormClose} from 'react-icons/gr'
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
 import usePasswordToggle from '../../hooks/usePasswordToggle'
 const EditUserProfile = ({info, setEditDetails}) => {
-    const [showPassword, setShowPassword] = useState(false)
-    const [PasswordInputType, ToggleIcon] = usePasswordToggle();
+   
   return (
     <div className="edituserprofile-background">
        <div className="edituserprofile-wrapper">
@@ -36,23 +35,9 @@ const EditUserProfile = ({info, setEditDetails}) => {
                <label htmlFor="email">Email ID : </label>
                <input type="email"  />
                </div>
-               {
-                   showPassword && 
-                 <div className="edituser-form-container ">
-                     <label htmlFor="password">New password : </label>
-                     <input type={PasswordInputType}/>
-                     <button className="password-eye-button">
-                        {ToggleIcon}
-                  
-                     </button>
-                </div>
-               }
+             
            </form>
-                  <div className="change-password">
-               <button type="button" onClick={()=> setShowPassword(true)}>
-                   Update Password
-               </button>
-                  </div>
+                 
                 <div className="save-button">
                     <button type="button">
                         Save
