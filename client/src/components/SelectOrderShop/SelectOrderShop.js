@@ -7,6 +7,7 @@ import { addToCart } from "../../networkCalls/userCalls";
 import { CheckItem } from "../../utils/util";
 import { BsFillCartPlusFill, BsFillCartCheckFill } from "react-icons/bs";
 const SelectOrderShop = ({ shops, product }) => {
+  const [isAvailable, setIsAvailable] = useState(true)
   const handleAddToCart = async (shop) => {
     const price = shop.inventory.find((item) => item.medicine === product._id)
       .price;
@@ -31,17 +32,38 @@ const SelectOrderShop = ({ shops, product }) => {
               <div className="shop-order-details">
                 <div className="shop-order-title">{shop.name}</div>
                 <div className="shop-order-address">{shop.address}</div>
+                <div className="shop-order-panda">
+
+
                 <div className="shop-order-price">
-                  {
+                   <strong>Price: </strong>₹{
                     shop.inventory.find((item) => item.medicine === product._id)
                       .price
                   }
+                </div>
+                <div className="shop-order-availability">
+
+                  {
+                    isAvailable ?
+                    (
+                      <div className="available">
+                        Available
+                      </div>
+                    )
+                    :
+                    (
+                      <div className="unavailable">
+                        Unavailable
+                      </div>
+                    )
+                  }
+                </div>
                 </div>
               </div>
               <div className="add-to-cart-button">
                 {CheckItem(userState.cart, product._id) ? (
                   <Link to="/cart">
-                    <button type="button" className="add-to-cart">
+                    <button type="button" className="go-to-cart">
                       <span>Go to Cart</span> <BsFillCartCheckFill />
                     </button>
                   </Link>

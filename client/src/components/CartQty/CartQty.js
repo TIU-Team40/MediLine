@@ -25,7 +25,7 @@ const CartQty = ({ product }) => {
   }
   return (
     <div className="cart-qty-container">
-      <div className="remove-button" onClick={removeFromCartHandler}>
+      <div className="remove-icon" onClick={removeFromCartHandler}>
         <BiTrash size="1.75em" />
       </div>
       <button className="cart-qty-minus" onClick={decreaseQuantityHandler}>

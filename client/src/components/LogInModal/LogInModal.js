@@ -98,7 +98,7 @@ const LogInModal = ({
         </form>
         <div className="create-an-account">
           <h5>
-            Don't have an account? <Link to={link_to}>Create an account</Link>
+            Don't have an account? <Link to={link_to} className={'create-an-account-ds'}>Create an account</Link>
           </h5>
         </div>
       </div>

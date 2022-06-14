@@ -26,17 +26,48 @@
     background-color: var(--color-primary) ;
     color: white;
   }
-  
+
+  .go-to-cart{
+    padding: 10px 20px;
+    border: 1px solid rgb(11, 163, 11);;
+    margin-top: 40px;
+    font-size: 15px;
+    font-family: 'Inter';
+    font-weight: 600;
+    background-color: white;
+    color:white;
+    cursor: pointer;
+    width: 160px;
+     transform: scale(1, 1);
+    transition: all 0.5s ease;
+    border-radius: 5px;
+    background-color: rgb(11, 163, 11);
+  }
+
+  .go-to-cart:hover{
+    background-color: rgb(2, 84, 2);
+    
+  }
 
 .select-order-shop-wrapper{
     display: flex;
     flex-direction: column;
 }
 
+
+.shop-order-panda{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.shop-order-price{
+    margin: 0.2rem 1rem;
+    font-size: 18px;
+}
 .shop-order-container{
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     margin: 0.25rem 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid rgba(128, 128, 128, 0.25);
@@ -52,10 +83,29 @@
 
 .shop-order-title{
     font-weight: bold;
-    
+    margin: 1rem;
+    font-size: 20px;
 }
 .shop-order-address{
     font-size: 15px;
+    margin: 1rem;
+}
+
+.available{
+    color: green;
+    font-family: 'Gilroy-Bold';
+    font-size: 18px;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+    /* background-color: green; */
+}
+
+.unavailable{
+    color: rgb(108, 108, 108);
+    font-family: 'Gilroy-Bold';
+    font-size: 18px;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
 }
 
 @media screen and (max-width:768px)
@@ -92,5 +142,14 @@
       .shop-order-container{
         align-items: center;
       }
-
+      .shop-order-price{
+        margin: 0.2rem 1rem;
+        font-size: 16px;
+    }
+    .available{
+        font-size: 16px;
+    }
+    .unavailable{
+        font-size: 16px;
+    }
 }

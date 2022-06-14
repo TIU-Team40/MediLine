@@ -6,19 +6,36 @@ import classes from "./Home.module.css";
 import ShopNotification from "../ShopOwner/ShopNotification/ShopNotification";
 import { homepage_category } from "../../dummy_data";
 import "../../styles/global.css";
-
+import { useAuth } from "../../context/Auth/AuthContext";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import LocationFinder from "../../components/LocationFinder/LocationFinder";
 const Home = () => {
   const type = JSON.parse(localStorage.getItem("type"));
   const isShopowner = type === "pharmacy";
-
+  const { medicineDisease } = useAuth();
+  const medicineDiseaseArray = [
+    ...medicineDisease.medicines,
+    ...medicineDisease.diseases,
+  ];
   return (
-    <>
+    <div className="homeContainer">
       {isShopowner ? (
         <ShopNotification />
       ) : (
         <div>
-          <HeroBanner />
+          <header>
+           <div className={classes.location}>
+             <LocationFinder />
+            </div>
+           <div className={classes.searchBar}>
+          <SearchBar
+            placeholder="Search for diseases / medicine"
+            data={medicineDiseaseArray}
+           />
+           </div>
+      </header>
           <MidCards />
+          <HeroBanner />
           {homepage_category.map((data) => {
             return (
               <React.Fragment key={data.id}>
@@ -50,7 +67,7 @@ const Home = () => {
           })}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

@@ -13,6 +13,10 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 const ProductDetails = ({ similarProducts }) => {
   const { _id } = useParams();
   const { medicineDisease } = useAuth();
+  const medicineDiseaseArray = [
+    ...medicineDisease.medicines,
+    ...medicineDisease.diseases,
+  ];
   const { currentPharmacies } = useMedicine();
   const medicine = medicineDisease.medicines.find(
     (medicine) => medicine._id === _id
@@ -27,7 +31,7 @@ const ProductDetails = ({ similarProducts }) => {
       <div className="product-detail-container">
         <div className="product-detail-header">
           <LocationFinder/>
-          <SearchBar data={searchBarTest} placeholder="Seach for diseases / medicines"/>
+          <SearchBar data={medicineDiseaseArray} placeholder="Seach for diseases / medicines"/>
         </div>
         <div className="product-main-content">
 
@@ -48,7 +52,7 @@ const ProductDetails = ({ similarProducts }) => {
             <h3> Quantity: </h3>
             <p> {medicine.perUnitQuantity} tablets </p>
           </div>
-          <p className="price"> ₹{medicine.price}</p>
+          <p className="price"> MRP:  ₹{medicine.price}</p>
 
           <h4>Select a shop: </h4>
           <div className="select-your-shop">

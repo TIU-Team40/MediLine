@@ -1,29 +1,18 @@
+
 .herobanner-container{
     display: flex;
     max-width: 1100px;
     flex-direction: column;
     background-color: #efefefc6;
     z-index: -1;
-    padding: 0;
+    
 }
 .location{
     width: 30%;
 }
 
-header{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-}
-.search-bar{
 
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 70%;
-}
+
 
 .hero-banner{
     display: flex;
@@ -36,7 +25,7 @@ header{
     display: flex;
     flex-direction: column;
    
-    margin: 1rem;
+    margin: 2rem;
 }
 
 .welcome-header h1{
@@ -52,6 +41,9 @@ header{
 .welcome-header p{
     font-family: 'Gilroy';
     font-size: 20px;
+}
+.illustration{
+    margin: 0.5rem 2rem;
 }
 .illustration img{
     height: 300px;
@@ -89,10 +81,7 @@ header{
         width: 300px;
         height: 300px;
     }
-    header{
-        display: flex;
-        flex-direction: column;
-    }
+  
 }
 
 @media screen and (max-width:650px){
@@ -127,15 +116,6 @@ header{
         align-items: center;
 
     }
-    .search-bar{
-        width: 90%;
-        
-    }
-    .location{
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+   
 
 }
