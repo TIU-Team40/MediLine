@@ -33,7 +33,7 @@ export const proceedToPay = async (
       theme: { color: "#3399cc" },
       handler: async function(response) {
         const res = await createOrder(
-          userState.addresses[0]._id,
+          userState.addresses.find((address) => address.isPrimary === true),
           userState.cart,
           response.razorpay_payment_id,
           orderValue,
