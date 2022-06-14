@@ -14,13 +14,13 @@ const LargeCard = ({ data }) => {
   const navigate = useNavigate();
   return (
     <div className={classes.largeCardContainer}>
-      <div className={classes.largeCardWrapper}>
+          <Link to={`/product/${data._id}`} className={classes.largeCardWrapper}>
+      
         <div className={classes.largeCardImageWrapper}>
-          <Link to={`/product/${data._id}`}>
             <div className={classes.largeCardImage}>
               <img src={data.picture} alt="product image" />
             </div>
-          </Link>
+       
         </div>
         <div className={classes.largeCardContent}>
           <div className={classes.largeCardTitle}>
@@ -32,7 +32,8 @@ const LargeCard = ({ data }) => {
             <p> ₹{data.price}</p>
           </div>
         </div>
-      </div>
+    
+      </Link>
 
       {/* <div className={classes.cartButton}>
                 {

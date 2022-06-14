@@ -30,11 +30,7 @@
 .user-box {
   height: 500px;
   width: 500px;
-  background: linear-gradient(
-    var(--color-secondary),
-    transparent,
-    var(--color-secondary)
-  );
+  background: #21cdde;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +56,7 @@
   /* box-shadow: 0px 1px 3px 2px rgba(0, 0, 0, 0.347); */
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
   background: transparent;
-  color: white;
+  color: black;
 }
 ::placeholder {
   color: rgba(0, 0, 0, 0.88);
@@ -112,12 +108,19 @@
   padding-bottom: 2rem;
 }
 
-.create-an-account a {
-  color: rgb(202, 146, 43);
-  text-shadow: 1px 1px rgba(80, 80, 80, 0.342);
-  font-size: 14px;
+.create-an-account-ds {
+  color: #083b9a;
+  text-shadow: 1px 1px rgba(207, 15, 15, 0.26);
+  font-size: 15px;
 }
 
+.user-submit{
+  cursor: pointer;
+}
+.user-submit:hover{
+ background-color: var(--color-primary-dark);
+ transform: scale(1.1);
+}
 @media screen and (max-width: 768px) {
   .modal-background {
     height: 100vh;
@@ -179,5 +182,8 @@
   }
   .create-an-account {
     padding-bottom: 1.5rem;
+  }
+  .create-an-account-ds {
+    font-size: 13px;
   }
 }

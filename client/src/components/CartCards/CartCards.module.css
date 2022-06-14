@@ -44,12 +44,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+   
 }
 .cartCardPrice p{
     font-family: 'Inter';
     font-weight: 600;
     font-size: 20px;
     margin-bottom: 0;
+}
+.pharmacyInfo{
+    font-family: 'Inter';
+
 }
 
 @media screen and (max-width: 768px)

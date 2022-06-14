@@ -1,0 +1,49 @@
+.disease-detail-container{
+    max-width: 1100px;
+    width: 100%;
+
+}
+
+.select-your-medicine{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.disease-related-medicine{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-shadow: 1px 1px 6px 2px rgba(155, 155, 155, 0.54);
+    margin: 0.5rem;
+    width: 100%;
+    border-radius: 5px;
+}
+.disease-medicine-content{
+    
+    margin: 1rem;
+}
+.disease-medicine-image img{
+    height: 150px;
+    width: 150px;
+}
+
+.product-detail-desc-disease{
+    width: 100%;
+  
+}
+
+.disease-medicine-name{
+    font-family: 'Gilroy-Medium';
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.product-detail-desc-disease p{
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 1rem;
+}

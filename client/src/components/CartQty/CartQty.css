@@ -31,13 +31,13 @@
     
 }
 
-.remove-button{
+.remove-icon{
     color: rgb(171, 10, 10);
     margin-right: 20px;
     cursor: pointer;
 }
 
-.remove-button:hover{
+.remove-icon:hover{
     color: rgb(72, 4, 4);
     
 }

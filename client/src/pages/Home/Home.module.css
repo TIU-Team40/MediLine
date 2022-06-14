@@ -1,9 +1,34 @@
+.homeContainer{
+    max-width: 1100px;
+    width: 100%;
+}
+
+
 .cardCategory{
     padding: 2rem 0;
     background-color: var(--color-bggrey);
     padding-bottom: 4rem;
 }
 
+header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 1100px;
+    width: 100%;
+    background-color: var(--color-bggrey);
+    
+}
+.location{
+    width: 25%;
+}
+.searchBar{
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 73%;
+}
 .cardSection
 {
    display:grid;
@@ -59,6 +84,12 @@
         margin: 0 2rem;
        
     }
+    header{
+      
+        flex-direction: column;
+        width: 100%;
+    }
+   
 
 }
 
@@ -77,5 +108,7 @@
     .cardHeadTitle h1{
         font-size: 1.4rem;
     }
+    
+   
 }
 
