@@ -1,9 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { MdSearch, MdClose } from "react-icons/md";
 import "./SearchBar.css";
 import "../../styles/global.css";
 import { useNavigate } from "react-router-dom";
-
 
 const SearchBar = ({ placeholder, data }) => {
   const [filteredData, setFilteredData] = useState([]);
@@ -12,57 +11,71 @@ const SearchBar = ({ placeholder, data }) => {
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
-    const newFilter = data.filter((value) =>{
-       return value.title.toLowerCase().includes(searchWord.toLowerCase());
+    const newFilter = data.filter((value) => {
+      return value.name.toLowerCase().includes(searchWord.toLowerCase());
     });
-    if(searchWord==="")
-    {
-      setFilteredData([])
-    }else{
+    if (searchWord === "") {
+      setFilteredData([]);
+    } else {
       setFilteredData(newFilter);
     }
-  }
+  };
   const clearInput = () => {
     setFilteredData([]);
     setWordEntered("");
-  }
+  };
   return (
     <div className="search">
       <div className="search-inputs">
-        <input type="text" placeholder={placeholder} size="40" value={wordEntered} onChange={handleFilter} />
+        <input
+          type="text"
+          placeholder={placeholder}
+          size="40"
+          value={wordEntered}
+          onChange={handleFilter}
+        />
 
-       
         <div className="search-icon">
-          {filteredData.length === 0 ?
-          <MdSearch size="2em" className="icon" /> : 
-          <MdClose size="2em" onClick={clearInput}/>}
+          {filteredData.length === 0 ? (
+            <MdSearch size="2em" className="icon" />
+          ) : (
+            <MdClose size="2em" onClick={clearInput} />
+          )}
         </div>
       </div>
       <div className="smallscreen-input">
-      <input type="text" placeholder={placeholder} value={wordEntered} onChange={handleFilter} />
-      <div className="smallscreen-icon">
-
-        
-      {filteredData.length === 0 ?
-          <MdSearch size="2em" className="icon" /> : 
-          <MdClose size="2em" onClick={clearInput}/>}
+        <input
+          type="text"
+          placeholder={placeholder}
+          value={wordEntered}
+          onChange={handleFilter}
+        />
+        <div className="smallscreen-icon">
+          {filteredData.length === 0 ? (
+            <MdSearch size="2em" className="icon" />
+          ) : (
+            <MdClose size="2em" onClick={clearInput} />
+          )}
+        </div>
       </div>
-      </div>
 
-
-      {filteredData.length!==0 &&
-      <div className="data-result">
-        {filteredData.slice(0, 15).map((value, key)=>{
-          return(
-            <div className="data-item" onClick={()=>
-              navigate(`/product/${value._id}`)
-            }>
-              <p>{value.title}</p>
-            </div>
-          )
-        })}
-      </div>
-      }
+      {filteredData.length !== 0 && (
+        <div className="data-result">
+          {filteredData.slice(0, 15).map((value, key) => {
+            return (
+              <div
+                className="data-item"
+                onClick={() => {
+                  if (value.diseases) navigate(`/product/${value._id}`);
+                  else navigate(`/disease/${value._id}`);
+                }}
+              >
+                <p>{value.name}</p>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

@@ -103,6 +103,10 @@
 .empty-cart h2:hover .arrow-icon{
     transform: translateX(10px);
 }
+
+.error-message {
+    color: red;
+}
 @media screen and (max-width:768px)
 {
     .cart-container{

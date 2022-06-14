@@ -1,6 +1,7 @@
 const User = require("../models/userModel");
 const Medicine = require("../models/medicineModel");
 const Address = require("../models/addressModel");
+const Pharmacy = require("../models/pharmacyModel");
 const Order = require("../models/orderModel");
 const BigPromise = require("../middlewares/bigPromise");
 const cookieToken = require("../utils/cookieToken");
@@ -468,6 +469,12 @@ exports.createOrder = BigPromise(async (req, res) => {
   user.orders.push(order);
 
   await user.save();
+
+  const pharmacy = await Pharmacy.findById(pharmacyId);
+
+  pharmacy.orders.push(order);
+
+  await pharmacy.save();
 
   res.status(200).json({
     success: true,

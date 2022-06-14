@@ -1,6 +1,6 @@
-import { createOrder, emptyCart } from "./networkCalls";
-import icon64 from "../icon/Utility-UI-64.png";
-import { toast } from "react-toastify";
+import { createOrder, emptyCart } from "../networkCalls/userCalls";
+// import icon64 from "../icon/Utility-UI-64.png";
+// import { toast } from "react-toastify";
 
 const { REACT_APP_RAZORPAY_API_KEY, REACT_APP_SECRET_KEY } = process.env;
 
@@ -8,10 +8,10 @@ export const proceedToPay = async (
   orderTotalValue,
   orderValue,
   discountValue,
-  selectAddress,
-  authState,
-  authDispatch,
-  navigate
+  userState,
+  userDispatch,
+  navigate,
+  pharmacyId
 ) => {
   const response = await loadSdk();
   if (response) {
@@ -22,39 +22,39 @@ export const proceedToPay = async (
       currency: "INR",
       name: "MEDILINE",
       description: "Thank you for shopping with us",
-      image: icon64,
+      // image: icon64,
       // callback_url: "https://eneqd3r9zrjok.x.pipedream.net/",
       prefill: {
-        name: selectAddress.name,
-        email: authState.email,
-        contact: selectAddress.mobileNo,
+        name: userState.name,
+        email: userState.email,
+        contact: userState.contactNo,
       },
       notes: { address: "Razorpay Corporate Office" },
       theme: { color: "#3399cc" },
-      handler: async function (response) {
+      handler: async function(response) {
         const res = await createOrder(
-          selectAddress._id,
-          authState.cart,
+          userState.addresses[0]._id,
+          userState.cart,
           response.razorpay_payment_id,
           orderValue,
           discountValue,
-          orderTotalValue
+          orderTotalValue,
+          pharmacyId
         );
-        authDispatch({ type: "ADD_TO_ORDER", payload: res.order });
+        userDispatch({ type: "ADD_TO_ORDER", payload: res.order });
         await emptyCart();
-        authDispatch({ type: "EMPTY_CART" });
-        authDispatch({ type: "USER_PROFILE_TAB", payload: "orders" });
-        navigate("/user");
-        toast.success("Order Placed Successfully");
+        userDispatch({ type: "EMPTY_CART" });
+        navigate("/orders");
+        // toast.success("Order Placed Successfully");
       },
     };
     const rzp1 = new window.Razorpay(options);
     rzp1.open();
-    rzp1.on("payment.failed", function (response) {
-      toast.error("Something went wrong", response.error.code);
+    rzp1.on("payment.failed", function(response) {
+      // toast.error("Something went wrong", response.error.code);
     });
   } else {
-    toast.error("Something went wrong");
+    // toast.error("Something went wrong");
   }
 };
 

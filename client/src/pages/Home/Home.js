@@ -39,6 +39,7 @@ const Home = () => {
                           imageUrl={product.imageUrl}
                           description={product.description}
                           price={product.price}
+                          key={product.headTitle}
                         />
                       );
                     })}

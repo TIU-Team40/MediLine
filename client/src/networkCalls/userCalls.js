@@ -128,7 +128,6 @@ export const addToCart = async (medicineId, pharmacy, price) => {
       url: `${REACT_APP_BACKEND_URL}/user/cart`,
       data: {
         medicineId,
-        quantity: 1,
         pharmacy,
         price,
       },
