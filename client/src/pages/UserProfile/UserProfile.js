@@ -5,16 +5,24 @@ import CartContext from '../../context/Cart/CartContext';
 import { Link, useNavigate } from 'react-router-dom';
 import {FaUserCircle} from 'react-icons/fa'
 import EditUserProfile from '../../components/EditUserProfile/EditUserProfile';
+import UpdatePassword from '../../components/UpdatePassword/UpdatePassword';
 const UserProfile = ({info}) => {
     const [editDetails, setEditDetails] = useState(false);
     const navigate = useNavigate();
     const {firstName, lastName, phoneNumber, emailId} = info;
+    const [updatePassword, setUpdatePassword] = useState(false)
     const {totalItem} = useContext(CartContext);
   return (
       <div className="userprofile-container">
         {editDetails && <EditUserProfile info={info} setEditDetails={setEditDetails}/>}
+        {updatePassword && <UpdatePassword setUpdatePassword={setUpdatePassword}/>}
+        <div className="user-profile-header">
         <h1>My Profile</h1>
-            
+
+        </div>
+        <div className="user-profile-outer">
+
+       
         <div className="userprofile-wrapper">
             <div className="user-icon">
                 <FaUserCircle className='user-icon-icon'/>
@@ -54,6 +62,12 @@ const UserProfile = ({info}) => {
                 </Link>
 
             </div>
+            <div className="update-password-button">
+                <button type='button' onClick={()=>setUpdatePassword(true)}>
+                    Update Password
+                </button>
+
+            </div>
             <div className="logout-button">
                 <button type='button'>
                     Logout
@@ -62,6 +76,7 @@ const UserProfile = ({info}) => {
             </div>
             </div>
             </div>
+        </div>
         </div>
 
     </div>

@@ -17,6 +17,17 @@
    color:inherit;
 }
 
+.main-logo{
+    position: relative;
+   
+}
+.pharmacy-logo{
+    position: absolute;
+    font-size: 15px;
+    color: rgb(24, 214, 24);
+    
+   font-family: 'Inter';
+}
 
 .menu-link {
     display:flex;

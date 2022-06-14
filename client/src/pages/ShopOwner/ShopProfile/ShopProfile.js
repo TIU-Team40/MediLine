@@ -1,11 +1,13 @@
 import React, {useState} from 'react'
 import './ShopProfile.css'
 import '../../../styles/global.css'
+import UpdatePassword from '../../../components/UpdatePassword/UpdatePassword';
 
 const ShopProfile = () => {
     const [updatePassword, setUpdatePassword] = useState(false);
   return (
     <div className="shop-profile-container">
+        {updatePassword && <UpdatePassword setUpdatePassword={setUpdatePassword}/>}
         <h1>Profile</h1>
         <div className="shop-profile-wrapper">
             
@@ -27,27 +29,15 @@ const ShopProfile = () => {
                     <input type="number" />
 
                    
-                    {
-                        updatePassword ? (
-
-                        <>
-
-                        <label htmlFor="Password">New Password: </label>
-                        <input type="password" />
-                        </>
-                        ):
-                            
-                        (
-                            <div className='password-button'>
-                            <button type="button"  onClick={()=>setUpdatePassword(true)}> 
-                            Update Password </button>
-                            </div>
-                            
-                        )
-                    }
+                   
 
 
             </form>
+            <div className="update-password-button">
+                <button type="button" onClick={()=> {setUpdatePassword(true)}}>
+                    Update Password
+                </button>
+            </div>
             <div className="save-button">
                 <button type="button"> Save </button>
             </div>

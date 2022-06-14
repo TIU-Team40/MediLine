@@ -35,7 +35,10 @@ const ShopNavbar = () => {
     <nav className="main-nav">
       <div className="logo">
         <h3>
-          <Link to="/">MediLine</Link>
+          <Link to="/">
+             <span className="main-logo">MediLine  </span>
+            <span className="pharmacy-logo">Pharmacy</span>
+          </Link>
         </h3>
       </div>
 

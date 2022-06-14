@@ -13,12 +13,25 @@ import "./DiseaseDetails.css";
 function DiseaseDetails() {
   const { medicineDisease } = useAuth();
   const { diseaseId } = useParams();
-
+  //medicine.picture 
+  //medicine.name
+  
+ 
   // This is the disease to show in return
   const disease = medicineDisease.diseases.find(
     (disease) => disease._id === diseaseId
   );
-  return <div>DiseaseDetails</div>;
+  const {name, picture, medicines, seasons} = disease;
+
+  return <div>
+
+    {
+      medicines.map((medicine)=>{
+
+      })
+    }
+
+  </div>;
 }
 
 export default DiseaseDetails;

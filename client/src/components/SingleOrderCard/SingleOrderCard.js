@@ -1,13 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import "./SingleOrderCard.css";
 import "../../styles/global.css";
 import OrderCards from "../OrderCards/OrderCards";
 
 const SingleOrderCard = ({ order, disabled }) => {
+  const [contactPharmacy, setContactPharmacy] = useState(false)
+
   function getDate(orderDate) {
     const date = new Date(orderDate);
     return date.toDateString();
   }
+
 
   return (
     <div className="single-order-container">
@@ -29,9 +32,25 @@ const SingleOrderCard = ({ order, disabled }) => {
           </p>
           <h4>Order Summary: </h4>
         </div>
-        <div className="contact-pharmacy" id={disabled}>
-          <button type="button">Contact Pharmacy </button>
-        </div>
+        {
+          contactPharmacy ? 
+        
+          
+          (
+            <div className="contact-pharmacy" id={disabled}>
+            <p>+91-786543820</p>
+          </div>
+          ) 
+          :
+          (
+            
+
+              <div className="contact-pharmacy" id={disabled}>
+                <button type="button" onClick={()=>setContactPharmacy(true)}>Contact Pharmacy </button>
+              </div>
+                
+          )
+        }
       </div>
       <div className="single-order-wrapper">
         {order.medicines.map((product) => {

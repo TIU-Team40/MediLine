@@ -8,21 +8,17 @@ import LargeCard from "../LargeCard/LargeCard";
 import CartQty from "../CartQty/CartQty";
 import { useState } from "react";
 const AddMedicineModal = ({ setAddMedicine }) => {
-    const [amQuantity, setAmQuantity] = useState(1);
-    const handleIncrement = () =>{
-        setAmQuantity(prevCount => prevCount + 1)
+  const [amQuantity, setAmQuantity] = useState(1);
+  const handleIncrement = () => {
+    setAmQuantity((prevCount) => prevCount + 1);
+  };
+  const handleDecrement = () => {
+    if (amQuantity >= 2) {
+      setAmQuantity((prevCount) => prevCount - 1);
+    } else {
+      setAmQuantity((prevCount) => prevCount + 0);
     }
-    const handleDecrement = () =>{
-        if(amQuantity >= 2 )
-        {
-
-            setAmQuantity(prevCount => prevCount - 1)
-        }
-        else
-        {
-            setAmQuantity(prevCount => prevCount + 0)
-        }
-    }
+  };
   return (
     <div className="am_modal-background">
       <div className="am_edituserprofile-wrapper">
@@ -42,27 +38,35 @@ const AddMedicineModal = ({ setAddMedicine }) => {
           {searchBarTest.slice(0, 1).map((products) => {
             return <LargeCard data={products} />;
           })}
-
-          <div className="am_select-quantity">
-            <h3>Select Quantity to Add:</h3>
-            <div className="am_quantity-div">
-              <div className="am_decrement" >
-                <button type="button" onClick={handleDecrement}>-</button>
-              </div>
-              <div className="am_quantity">{amQuantity}</div>
-              <div className="am_increment">
-                <button type="button"  onClick={handleIncrement}>+</button>
+          <div className="am_select-quantity-and-price">
+            <div className="am_select-quantity">
+              <h3>Select Quantity to Add:</h3>
+              <div className="am_quantity-div">
+                <div className="am_decrement">
+                  <button type="button" onClick={handleDecrement}>
+                    -
+                  </button>
+                </div>
+                <div className="am_quantity">{amQuantity}</div>
+                <div className="am_increment">
+                  <button type="button" onClick={handleIncrement}>
+                    +
+                  </button>
+                </div>
               </div>
             </div>
-            <div className="add-medicine-button">
-
-              
-                    <button type="button"> Add Medicine </button>
-                    
-                
-            </div>
+              <div className="am_select-price">
+                <h3>Select Price Per Quantity: </h3>
+                <span>₹ </span> 
+                <input type="number" />
+              </div>
           </div>
+              <div className="add-medicine-button">
+                <button type="button"> Add Medicine </button>
+              </div>
         </div>
+
+        
       </div>
     </div>
   );

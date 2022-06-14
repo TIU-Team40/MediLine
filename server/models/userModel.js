@@ -32,7 +32,7 @@ const userSchema = mongoose.Schema({
   },
   addresses: [
     {
-      type: mongoose.Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId, //referring to the address model
       ref: "Address",
       required: true,
     },

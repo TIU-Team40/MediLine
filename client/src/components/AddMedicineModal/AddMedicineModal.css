@@ -54,13 +54,9 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Inter';
-    font-size: 25px;
     margin: 1.5rem;
 }
-.am_select-quantity{
-    font-family: 'Inter';
-    font-size: 20px;
-}
+
 
 .am_quantity-div{
     display: flex;
@@ -74,14 +70,14 @@
     border: none;
     border-radius: 5px;
     color: white;
-    font-size: 30px;
+    font-size: 25px;
     margin: 0.5rem;
     padding: 0rem 0.6rem;
     cursor: pointer;
 }
 
 .am_quantity{
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .add-medicine-button button{
@@ -98,10 +94,59 @@
     margin-top: 1rem;
 
 }
+.add-medicine-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 
 .add-medicine-button button:hover{
     transform: scale(1.1);
     background-color: var(--color-primary-dark);
+}
+
+.am_select-quantity-and-price{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+}
+.am_select-price h3{
+    font-family: 'Inter';
+   
+}
+.am_select-price{
+    margin: 1.5rem;
+
+}
+.am_select-price span{
+    font-size: 20px;
+}
+.am_select-price input{
+    font-size: 20px;
+    width: 200px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(53, 53, 53, 0.614);
+    transition: all .3s ease;
+}   
+
+.am_select-price input:focus{
+    border-bottom: 2px solid rgba(53, 53, 53, 0.8);
+}
+
+@media screen and (max-width: 768px)
+{
+    .am_edituserprofile-header h1{
+        font-size: 22px;
+    }
+    .am_select-quantity-and-price h3{
+        font-size: 13px;
+    }
+    .am_select-price input{
+        width: 120px;
+    }
 }
 
 @media screen and (max-width: 650px)
@@ -115,11 +160,19 @@
         right: 0px;
         cursor: pointer;
     }
-    .am_select-quantity h3{
-        font-size: 15px;
+    .am_select-quantity-and-price{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .am_select-price input{
+        width: 100px;
+    }
+    .am_select-quantity-and-price h3{
+        font-size: 12px;
     }
     .add-medicine-button button
     {
-        font-size: 15px;
+        font-size: 13px;
     }
 }
