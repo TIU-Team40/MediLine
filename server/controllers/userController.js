@@ -63,6 +63,15 @@ exports.login = BigPromise(async (req, res) => {
     .populate("addresses")
     .populate("orders");
 
+  const userId = user._id;
+
+  const orders = await Order.find({ userId })
+    .populate("medicines.medicine")
+    .populate("address")
+    .populate("pharmacy");
+
+  user.orders = orders;
+
   // If user not present in database.
   if (!user)
     return res.json({
