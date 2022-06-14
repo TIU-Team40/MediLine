@@ -1,5 +1,6 @@
 const BigPromise = require("./bigPromise");
 const User = require("../models/userModel");
+const Order = require("../models/orderModel");
 const Notification = require("../models/notificationModel");
 const customError = require("../utils/customError");
 const jwt = require("jsonwebtoken");
@@ -15,8 +16,18 @@ exports.isLoggedIn = async (req, res, next) => {
 
   const user = await User.findById(decode.id)
     .populate("cart.medicine")
+    .populate("cart.pharmacy")
     .populate("addresses")
     .populate("orders");
+
+  const userId = user._id;
+
+  const orders = await Order.find({ userId })
+    .populate("medicines.medicine")
+    .populate("address")
+    .populate("pharmacy");
+
+  user.orders = orders;
 
   // const allNotifications = await Notification.find()
   //   .populate("fromUser")
@@ -43,8 +54,19 @@ exports.isUserVerified = async (req, res, next) => {
   })
     .select("+password")
     .populate("cart.medicine")
+    .populate("cart.pharmacy")
     .populate("addresses")
     .populate("orders");
+
+  const userId = user._id;
+
+  const orders = await Order.find({ userId })
+    .populate("medicines.medicine")
+    .populate("address")
+    .populate("pharmacy");
+
+  user.orders = orders;
+
   req.user = user;
 
   next();
