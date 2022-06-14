@@ -1,7 +1,4 @@
 import React, { useState, useContext, useEffect } from "react";
-
-import CartContext from "../../context/Cart/CartContext";
-import { singleProduct } from "../../dummy_data";
 import "./ProductDetails.css";
 import "../../styles/global.css";
 import { useParams } from "react-router-dom";
@@ -9,22 +6,10 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ProductPageCard from "../../components/ProductPageCard/ProductPageCard";
 import SelectOrderShop from "../../components/SelectOrderShop/SelectOrderShop";
-import { shops } from "../../dummy_data";
 import { useAuth } from "../../context/Auth/AuthContext";
 import { useMedicine } from "../../context/Medicine/MedicineContext";
 const ProductDetails = ({ similarProducts }) => {
-  const [index, setIndex] = useState(0);
-  const {
-    addToCart,
-    removeItem,
-    totalItem,
-    totalAmount,
-    increment,
-    decrement,
-    cartItems,
-  } = useContext(CartContext);
   const { _id } = useParams();
-  const [cartButton, setCartButton] = useState(false);
   const { medicineDisease } = useAuth();
   const { currentPharmacies } = useMedicine();
   const medicine = medicineDisease.medicines.find(
@@ -42,16 +27,7 @@ const ProductDetails = ({ similarProducts }) => {
           <div className="image-container">
             <img src={medicine.picture} className="product-detail-image" />
           </div>
-          <div className="small-images-container">
-            {/* {imageUrl.map((item, i) => (
-                        <img 
-                        key={index}
-                        src={imageUrl}
-                        className={i==index ? 'small-image selected-image': 'small-image'}
-                        onMouseEnter={() => setIndex(i)}
-                        />
-                    ))} */}
-          </div>
+          <div className="small-images-container"></div>
         </div>
 
         <div className="product-detail-desc">
@@ -63,10 +39,6 @@ const ProductDetails = ({ similarProducts }) => {
             <h3> Quantity: </h3>
             <p> {medicine.perUnitQuantity} tablets </p>
           </div>
-          {/* <div className="additional-information">
-            <h3>Additional Information: </h3>
-            <p>{medicine.additionalInfo}</p>
-          </div> */}
           <p className="price"> ₹{medicine.price}</p>
 
           <h4>Select a shop: </h4>
