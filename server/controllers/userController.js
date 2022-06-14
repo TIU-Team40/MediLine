@@ -414,7 +414,7 @@ exports.deleteAddress = BigPromise(async (req, res) => {
   const user = req.user;
   const address = await Address.findById(req.params.addressId);
 
-  await address.delete();
+  // await address.delete();
 
   const updatedAddress = user.addresses.filter(
     (addr) => addr._id.toString() !== req.params.addressId

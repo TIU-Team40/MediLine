@@ -23,11 +23,11 @@ const addressSchema = mongoose.Schema({
   },
   pinCode: {
     type: String,
-    require: true,
+    required: true,
   },
   contactNo: {
     type: String,
-    require: true,
+    required: true,
   },
   isPrimary: {
     type: Boolean,
