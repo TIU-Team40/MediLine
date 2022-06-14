@@ -1,0 +1,183 @@
+.modal-background {
+  width: 100vw;
+  height: 110vh;
+
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.modal-background::-webkit-scrollbar {
+  display: none;
+}
+.modal-background img {
+  filter: blur(2px);
+  opacity: 1;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-box {
+  height: 500px;
+  width: 500px;
+  background: linear-gradient(
+    var(--color-secondary),
+    transparent,
+    var(--color-secondary)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background-size: 700px 500px;
+  background-repeat: no-repeat;
+
+  border-radius: 5px;
+  position: absolute;
+  box-shadow: 2px 2px 10px 2px black;
+}
+
+.user-form input {
+  font-family: "Inter";
+  padding: 1rem 0;
+  padding-right: 10rem;
+  padding-left: 1rem;
+  margin: 0.5rem;
+  border: none;
+  font-size: 17px;
+  transition: all 0.35s ease;
+  /* box-shadow: 0px 1px 3px 2px rgba(0, 0, 0, 0.347); */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  color: white;
+}
+::placeholder {
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.user-form input:focus {
+  border-bottom: 3px solid white;
+
+  outline: none;
+  opacity: 0.98;
+}
+.user-form input:last-child {
+  text-align: center;
+  margin: 2rem;
+  padding: 0.5rem 2rem;
+  border: none;
+  background-color: var(--color-primary);
+  color: white;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0.347);
+}
+.user-box h3 {
+  font-family: "gilroy-bold";
+  text-transform: uppercase;
+  font-size: 26px;
+  color: white;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.user-form h5 {
+  color: red;
+}
+
+.header-stuff span {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.create-an-account {
+  padding-bottom: 2rem;
+}
+
+.create-an-account a {
+  color: rgb(202, 146, 43);
+  text-shadow: 1px 1px rgba(80, 80, 80, 0.342);
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-background {
+    height: 100vh;
+    width: 100vw;
+  }
+  .user-box {
+    height: 400px;
+    width: 400px;
+  }
+  .user-form input {
+    padding-right: 5rem;
+    margin: 0.3rem;
+    font-size: 15px;
+  }
+  .user-box h3 {
+    font-size: 20px;
+  }
+  .user-form {
+    margin: 0.8rem;
+  }
+  ::placeholder {
+    font-size: 15px;
+  }
+  .user-form input:last-child {
+    margin: 1rem;
+    padding: 0.4rem 1.5rem;
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .modal-background {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .user-box {
+    height: 350px;
+    width: 350px;
+  }
+  .user-form input {
+    padding-right: 3.5rem;
+    margin: 0.2rem;
+    font-size: 15px;
+  }
+  .user-box h3 {
+    font-size: 18px;
+  }
+  .user-form {
+    margin: 0.5rem;
+  }
+  ::placeholder {
+    font-size: 13px;
+  }
+  .user-form input:last-child {
+    margin: 1rem;
+    padding: 0.35rem 1.3rem;
+    font-size: 14px;
+  }
+  .create-an-account {
+    padding-bottom: 1.5rem;
+  }
+}

@@ -1,0 +1,130 @@
+.order-cards-container{
+   
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 5px;
+    font-family: 'Inter';
+    
+}
+.order-card-desc p{
+    font-size: 12px;
+}
+.order-cards-card{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  
+    width: 100%;
+  
+}
+
+
+.card-image-wrapper img{
+    height: 100px;
+    width: 100px;
+}
+
+.card-content
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    font-family: 'Inter';
+
+
+}
+
+.order-card-title h2{
+    font-size: 15px;
+}
+
+
+.quantity-and-price{
+    font-family: 'Inter';
+    font-size: 12px;
+}
+.card-price{
+    margin: 1rem 0;
+    font-weight:bold;
+    font-size: 20px;
+
+}
+.card-order-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+  
+    
+}
+
+.card-shipping-status{
+    margin-right: 2rem;
+}
+
+.card-order-date{
+    margin-right: 2rem;
+}
+
+.card-order-again{
+    margin-left: auto;
+    
+}
+
+.card-order-again button{
+    padding: 0.6rem 2rem;
+    border: none;
+    background-color: var(--color-primary);
+    color: white;
+    font-family: 'Inter';
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.card-order-again button:hover{
+    background-color: rgb(169, 99, 8);
+    transform: scale(1.025);
+}
+
+@media screen and (max-width:768px)
+{
+    .card-image-wrapper img{
+        height: 90px;
+        width: 90px;
+    }
+    .order-card-title h2{
+        font-size: 14px;
+    }
+    .quantity-and-price p{
+        font-family: 'Inter';
+        font-size: 12px;
+    }
+    .order-card-desc p{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:650px)
+{
+
+    .card-image-wrapper img{
+        height: 70px;
+        width: 70px
+    }
+    .order-card-title h2{
+        font-size: 12px;
+    }
+    .quantity-and-price p{
+     
+        font-size: 10px;
+    }
+    .order-card-desc p{
+        font-size: 10px;
+    }
+    
+}

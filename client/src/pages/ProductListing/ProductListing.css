@@ -25,8 +25,32 @@ select{
 }
 .product-list{
     padding-bottom: 1rem;
+  
 }
 
+
+.product-list-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 1rem;
+}
+
+.product-list-container{
+    background-color: var(--color-bggrey);
+}
+
+@media screen and (max-width: 768px)
+{
+    .product-list-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+    
+}
 @media screen and (max-width:650px) {
     .product-list-container{
         width: 90%;

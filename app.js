@@ -27,9 +27,15 @@ app.use(
 
 // Routes
 const homeRoute = require("./server/routes/homeRoute");
-// const userRoute = require("./server/routes/userRoute");
+const userRoute = require("./server/routes/userRoute");
+const pharmacyRoute = require("./server/routes/pharmacyRoute");
+const diseaseRoute = require("./server/routes/diseaseRoute");
+const medicineRoute = require("./server/routes/medicineRoute");
 
 app.use("/api/v1", homeRoute);
-// app.use("/api/v1", userRoute);
+app.use("/api/v1", userRoute);
+app.use("/api/v1", diseaseRoute);
+app.use("/api/v1", medicineRoute);
+app.use("/api/v1/pharmacy", pharmacyRoute);
 
 module.exports = app;

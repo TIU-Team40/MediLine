@@ -4,6 +4,7 @@
     width: fit-content;
     height: fit-content;
     margin: 1rem;
+   
 }
 
 .location-name
@@ -14,15 +15,17 @@
     align-items: center;
 }
 
-.location-text{
-    background-color: #CDCDCD; 
-    padding: 0.5rem 2.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: left;
+
+.select-location{
+    padding: 0.3rem 2rem;
     font-family: 'Inter';
-    margin-left:10px;
-   
+}
+
+.select-location-option{
+    border-radius: 5px;
+    font-family: 'Inter';
+    padding: 2rem;
+
 }
 
 @media screen and (max-width: 1000px)
@@ -31,7 +34,7 @@
         font-size: 0.8rem;
     }
     .location-container{
-        margin:0.8rem;
+        width: 100%;
        
     }
 }
@@ -39,15 +42,12 @@
 @media screen and (max-width: 768px)
 {
     
-    .location-text{
-        padding: 0.5rem 1.5rem;
-        font-size: 0.7rem;
-    }
+    
     .location-name{
         width: 100%;
     }
     .location-container{
-        width: 200px;
+        width: 100%;
     }
 }
 
@@ -55,12 +55,12 @@
 {
     .location-container{
        
-        width: 110%;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        background-color: #CDCDCD;
+       
         border-radius: 10px;
         padding: 0.2rem 0;
     }
@@ -68,11 +68,7 @@
         width: 100%;
 
     }
-   .location-text{
-       padding: 0.1rem ;
-       font-size: 0.7rem;
-       
-   }
+   
    .icon{
        height: 1.2rem;
        width:1.2rem;

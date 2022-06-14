@@ -23,10 +23,15 @@
 .card-content{
     text-align: center;
     margin: 1rem;
+    text-align: center;
+    
 }
 .card-content h2{
     font-size: 1.3rem;
     font-family: 'Gilroy-Bold';
+    text-align: center;
+    margin: auto;
+    
 }
 .card-content p{
     font-family: 'Inter';
