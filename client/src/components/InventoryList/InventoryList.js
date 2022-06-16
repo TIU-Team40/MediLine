@@ -28,7 +28,7 @@ const InventoryList = ({ inventoryData, setAddMedicine, setMedicineType }) => {
                     <div className="medicine-title">{medicine.name}</div>
                     <div className="medicine-desc">{medicine.description}</div>
                     <div className="medicine-price">
-                      <strong>Quantity:</strong> ₹{quantity}
+                      <strong>Quantity:</strong> {quantity}
                     </div>
                     <div className="medicine-price">
                       <strong>Price:</strong> ₹{price}
