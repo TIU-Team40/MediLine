@@ -36,7 +36,7 @@ const AddMedicineModal = ({
       setAmQuantity((prevCount) => prevCount + 0);
     }
   };
-  
+
   async function addMedicineHandler() {
     if (
       pharmacyState.inventory.find(
@@ -95,6 +95,7 @@ const AddMedicineModal = ({
               data={medicineDisease.medicines}
               setSelectedMedicine={setSelectedMedicine}
               setPrice={setPrice}
+              type="shop"
             />
           )}
           {selectedMedicine !== "" && <LargeCard data={selectedMedicine} />}
@@ -132,10 +133,12 @@ const AddMedicineModal = ({
           )}
           <div className="add-medicine-button">
             {medicineType === "" ? (
-              <button type="button" onClick={addMedicineHandler}>
-                {" "}
-                Add Medicine{" "}
-              </button>
+              selectedMedicine && (
+                <button type="button" onClick={addMedicineHandler}>
+                  {" "}
+                  Add Medicine{" "}
+                </button>
+              )
             ) : (
               <button type="button" onClick={editMedicineHandler}>
                 {" "}

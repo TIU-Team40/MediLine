@@ -19,9 +19,10 @@ const Cart = () => {
   const pharmacyId =
     userState.cart.length > 0 && userState.cart[0].pharmacy._id;
 
-  const paymentHandler = () =>
-    SamePharmacy(userState.cart)
-      ? proceedToPay(
+  const paymentHandler = () => {
+    if (SamePharmacy(userState.cart)) {
+      {
+        proceedToPay(
           orderTotalValue,
           bagValue,
           discountValue,
@@ -29,9 +30,11 @@ const Cart = () => {
           userDispatch,
           navigate,
           pharmacyId
-        )
-      : setError("Please Select Medicines from single pharmacy.");
-
+        );
+        setError("")
+      }
+    } else setError("Please Select Medicines from single pharmacy.");
+  };
   useEffect(() => {
     setBagValue(
       userState.cart.reduce((acc, item) => acc + item.price * item.quantity, 0)

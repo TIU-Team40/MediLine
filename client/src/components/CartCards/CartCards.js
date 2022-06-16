@@ -20,20 +20,22 @@ const CartCards = ({ product }) => {
             {product.bigDescription}
           </div> */}
           <div className={classes.cartCardPrice}>
-            <p> {product.quantity} x ₹{product.price}   </p>
+            <p>
+              {" "}
+              {product.quantity} x ₹{product.price}{" "}
+            </p>
 
             <div className="cardQty">
               <CardQty key={product.id} product={product} />
             </div>
             <br />
-
           </div>
-            <div className={classes.pharmacyInfo}>
-              <p>
-               Ordering from:
-                <strong> Apollo Pharmacy, Lake Town </strong>
-              </p>
-            </div>
+          <div className={classes.pharmacyInfo}>
+            <p>
+              Ordering from:
+              <strong> {product.pharmacy.name} </strong>
+            </p>
+          </div>
         </div>
       </div>
     </div>

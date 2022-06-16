@@ -31,11 +31,13 @@ const userRoute = require("./server/routes/userRoute");
 const pharmacyRoute = require("./server/routes/pharmacyRoute");
 const diseaseRoute = require("./server/routes/diseaseRoute");
 const medicineRoute = require("./server/routes/medicineRoute");
+const notificationRoute = require("./server/routes/notificationRoute");
 
 app.use("/api/v1", homeRoute);
 app.use("/api/v1", userRoute);
 app.use("/api/v1", diseaseRoute);
 app.use("/api/v1", medicineRoute);
+app.use("/api/v1", notificationRoute);
 app.use("/api/v1/pharmacy", pharmacyRoute);
 
 module.exports = app;

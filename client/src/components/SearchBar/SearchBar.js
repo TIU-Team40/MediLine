@@ -4,7 +4,13 @@ import "./SearchBar.css";
 import "../../styles/global.css";
 import { useNavigate } from "react-router-dom";
 
-const SearchBar = ({ placeholder, data, setSelectedMedicine, setPrice }) => {
+const SearchBar = ({
+  placeholder,
+  data,
+  setSelectedMedicine,
+  setPrice,
+  type,
+}) => {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
   const navigate = useNavigate();
@@ -66,9 +72,14 @@ const SearchBar = ({ placeholder, data, setSelectedMedicine, setPrice }) => {
               <div
                 className="data-item"
                 onClick={() => {
-                  setSelectedMedicine(value);
-                  setPrice(value.price);
-                  clearInput();
+                  if (type === "shop") {
+                    setSelectedMedicine(value);
+                    setPrice(value.price);
+                    clearInput();
+                  } else {
+                    if (value.diseases) navigate(`/product/${value._id}`);
+                    else navigate(`/disease/${value._id}`);
+                  }
                 }}
               >
                 <p>{value.name}</p>

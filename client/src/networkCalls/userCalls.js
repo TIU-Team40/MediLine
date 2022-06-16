@@ -309,3 +309,44 @@ export const cancelOrder = async (orderId) => {
     console.log(err);
   }
 };
+
+export const createNotification = async (
+  toUserId,
+  type,
+  orderId,
+  text,
+  prescription
+) => {
+  try {
+    let formData = new FormData();
+    formData.append("prescription", prescription);
+    formData.append("toUserId", toUserId);
+    formData.append("type", type);
+    formData.append("orderId", orderId);
+    formData.append("text", text);
+    const { data } = await axios({
+      method: "post",
+      url: `${process.env.REACT_APP_BACKEND_URL}/notification/create`,
+      data: formData,
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const updateNotificationsCall = async (notificationIdArray) => {
+  try {
+    const { data } = await axios({
+      method: "post",
+      url: `${REACT_APP_BACKEND_URL}/notification`,
+      data: { notificationIdArray: notificationIdArray },
+    });
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+};

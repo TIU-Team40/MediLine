@@ -43,7 +43,7 @@
 
 
 .am_content-wrapper{
-    height: 500px;
+    min-height: 400px;
     overflow: hidden;
     overflow-y: auto;
 }

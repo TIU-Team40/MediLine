@@ -30,14 +30,14 @@ exports.isPharmacyLoggedIn = async (req, res, next) => {
 
   pharmacy.orders = orders;
 
-  // const allNotifications = await Notification.find()
-  //   .populate("fromUser")
-  //   .populate("post")
-  //   .populate("toUser");
+  const allNotifications = await Notification.find()
+    .populate("fromUser")
+    .populate("order")
+    .populate("toUser");
 
-  // const userNotification = UserNotification(pharmacy._id, allNotifications);
+  const userNotification = UserNotification(pharmacy._id, allNotifications);
 
-  // pharmacy.notification = userNotification;
+  pharmacy.notification = userNotification;
 
   req.pharmacy = pharmacy;
 
