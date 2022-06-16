@@ -1,29 +1,26 @@
 import React from 'react'
-import './ShopNotificationCmp.css'
+import './PrescriptionNotification.css'
 import '../../styles/global.css'
-
-const ShopNotificationCmp = () => {
+const PrescriptionNotification = () => {
   return (
     <div className="shopowner-notification-cards">
     <div className="notification-title">
-      <h3>
-        NEW ORDER
-      </h3>
-        <p>
-          <button type="button">Go To Order</button>
-        </p>
+      <h4>
+        PRESCRIPTION RECEIVED
+      </h4>
+       
     </div>
-    <div className="notification-order-details">
+    {/* <div className="notification-order-details">
         <div className="order-quantity">
           <strong>Order Quantity: </strong> 2
         </div>
         <div className="order-total-amount">
           <strong>Order Total Amount: </strong> ₹27
         </div>
-    </div>
+    </div> */}
     
     <div className="notification-username">
-      <strong> Order from:</strong>  Nilankoor Biswas
+      <strong> From:</strong>  Nilankoor Biswas
     </div>
     <div className="notification-user-address">
       <p>
@@ -37,8 +34,16 @@ const ShopNotificationCmp = () => {
         <strong>Contact: </strong> 7001345668
       </p>
     </div>
+    <div className="notification-message">
+        <h5>Message: </h5>
+        <p>Hi kids, do you like violins? Wanna see me stick nine inch nails to each one of my eyelids? Wanna copy me and do exactly like I did? Try 'cid and get fucked up worse than my life is?</p>
+    </div>
+    <div className="open-prescription-button">
+
+        <button type="button">Open Prescription</button>
+    </div>
   </div>
   )
 }
 
-export default ShopNotificationCmp
+export default PrescriptionNotification

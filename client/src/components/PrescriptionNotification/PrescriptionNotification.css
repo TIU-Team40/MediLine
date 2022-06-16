@@ -1,0 +1,31 @@
+.notification-message{
+    font-family: 'Inter';
+
+}
+
+.notification-message p{
+    font-size: 14px;
+}
+
+.open-prescription-button button{
+    border: none;
+    padding: 0.5rem 1.5rem;
+    color: none;
+    background-color: var(--color-secondary);
+    color: white;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .25s ease-out;
+}
+
+.open-prescription-button button:hover{
+    background-color: var(--color-secondary-dark);
+    transform: scale(1.1);
+}
+
+.notification-title h4{
+    color: var(--color-primary);
+    font-size: 20px;
+}

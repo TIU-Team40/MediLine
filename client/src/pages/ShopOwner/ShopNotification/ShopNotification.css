@@ -1,9 +1,14 @@
 .shopowner-notification-container{
-    max-width: 1100px;
-    width: 100%;
+    width: 1100px;
+    
     height: max-content;
     background-color: var(--color-bggrey);
     padding-bottom: 4rem;
+    margin: 0;
+}
+
+.shopowner-order-notification h3{
+    margin: 1rem;
 }
 
 .shopowner-notification-wrapper{
@@ -13,6 +18,7 @@
     align-content: center;
     flex-direction: column;
     margin: auto;
+   
 }
 
 .shopowner-notification-container h1{
@@ -20,9 +26,19 @@
     margin: 1rem;
 }
 
+.shopowner-pres-notification h3{
+    margin: 1rem;
+}
 @media screen and (max-width: 768px)
 {
     .shopowner-notification-container{
-        width: 90%;
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 650px)
+{
+    .shopowner-notification-container{
+        width: 400px;
     }
 }
