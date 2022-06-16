@@ -4,7 +4,7 @@ import "./SearchBar.css";
 import "../../styles/global.css";
 import { useNavigate } from "react-router-dom";
 
-const SearchBar = ({ placeholder, data }) => {
+const SearchBar = ({ placeholder, data, setSelectedMedicine, setPrice }) => {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const SearchBar = ({ placeholder, data }) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
     const newFilter = data.filter((value) => {
-      return (value.name.toLowerCase().includes(searchWord.toLowerCase()));
+      return value.name.toLowerCase().includes(searchWord.toLowerCase());
     });
     if (searchWord === "") {
       setFilteredData([]);
@@ -66,8 +66,9 @@ const SearchBar = ({ placeholder, data }) => {
               <div
                 className="data-item"
                 onClick={() => {
-                  if (value.diseases) navigate(`/product/${value._id}`);
-                  else navigate(`/disease/${value._id}`);
+                  setSelectedMedicine(value);
+                  setPrice(value.price);
+                  clearInput();
                 }}
               >
                 <p>{value.name}</p>

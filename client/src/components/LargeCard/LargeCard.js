@@ -9,18 +9,14 @@ import { Link, useNavigate } from "react-router-dom";
 import ProductDetails from "../../pages/ProductDetails/ProductDetails";
 
 const LargeCard = ({ data }) => {
-  const { addToCart, removeItem, cartItems } = useContext(CartContext);
-  const [addToCartBtn, setAddToCartBtn] = useState(false);
   const navigate = useNavigate();
   return (
     <div className={classes.largeCardContainer}>
-          <Link to={`/product/${data._id}`} className={classes.largeCardWrapper}>
-      
+      <Link to={`/product/${data._id}`} className={classes.largeCardWrapper}>
         <div className={classes.largeCardImageWrapper}>
-            <div className={classes.largeCardImage}>
-              <img src={data.picture} alt="product image" />
-            </div>
-       
+          <div className={classes.largeCardImage}>
+            <img src={data.picture} alt="product image" />
+          </div>
         </div>
         <div className={classes.largeCardContent}>
           <div className={classes.largeCardTitle}>
@@ -32,7 +28,6 @@ const LargeCard = ({ data }) => {
             <p> ₹{data.price}</p>
           </div>
         </div>
-    
       </Link>
 
       {/* <div className={classes.cartButton}>

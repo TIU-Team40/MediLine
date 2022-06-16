@@ -11,22 +11,16 @@ export function pharmacyReducer(acc, action) {
         ),
       };
 
-    case "UPDATE_INVENTORY_ITEM_QUANTITY":
-      return {
-        ...acc,
-        inventory: acc.inventory.map((item) => {
-          return item.medicine._id === action.payload
-            ? { ...item, quantity: item.quantity + 1 }
-            : item;
-        }),
-      };
-
-    case "UPDATE_INVENTORY_ITEM_PRICE":
+    case "UPDATE_INVENTORY":
       return {
         ...acc,
         inventory: acc.inventory.map((item) => {
           return item.medicine._id === action.payload.medicineId
-            ? { ...item, price: action.payload.price }
+            ? {
+                ...item,
+                price: action.payload.price,
+                quantity: action.payload.quantity,
+              }
             : item;
         }),
       };

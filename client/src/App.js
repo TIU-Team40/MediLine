@@ -37,6 +37,7 @@ function App() {
   const {
     userState,
     userDispatch,
+    pharmacyState,
     pharmacyDispatch,
     setMedicineDisease,
     setPharmacies,
@@ -166,7 +167,7 @@ function App() {
           path="/shopprofile"
           element={
             <PrivateRoute>
-              <ShopProfile />
+              <ShopProfile pharmacy={pharmacyState} />
             </PrivateRoute>
           }
         />
