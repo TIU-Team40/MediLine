@@ -1,115 +1,112 @@
-.cardContainer{
-
-    width: 200px;
-    height: 350px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    background-color: #fff;
-    transition: all .2s ease-in-out;
-    
+.cardContainer {
+  width: 200px;
+  height: 350px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+  padding-bottom: 10px;
+  cursor: pointer;
 }
 
-.cardContainer:hover{
-    transform: scale(1.05);
-    box-shadow: 0px 1px 2px 2px rgba(0,0,0,0.2);
+.cardContainer:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-.cardImage
-{
-    display: grid;
-    place-items: center;
-    margin: 0.5rem;
-    overflow: hidden;
+.cardImage {
+  display: grid;
+  place-items: center;
+  margin: 0.5rem;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
-.cardImage img{
-    height: 100%;
-    width: 100%;
+.cardImage img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
-.card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+.cardContent {
+  margin: 0 1rem;
+  font-family: "Inter";
+}
 
+.cardTitle {
+  font-size: 13px;
 }
-.cardContent{
-    margin: 0 1rem;
-    font-family: 'Inter';
+.cardDescription {
+  font-family: "Inter";
+  margin-bottom: 1rem;
+}
+.cardPrice {
+  font-weight: bold;
+}
+@media screen and (max-width: 1000px) {
+  .cardTitle {
+    font-size: 12px;
+  }
+  .cardDescription {
+    font-size: 0.7rem;
+  }
+  .cardPrice {
+    font-size: 0.8rem;
+  }
+  .cardContainer {
+    width: 180px;
+    height: 320px;
+  }
 }
 
-.cardTitle{
-    font-size: 13px;
-}
-.cardDescription{
-    font-family: 'Inter';
-    margin-bottom: 1rem;
-}
-.cardPrice{
-    font-weight: bold;
-}
-@media screen and (max-width:1000px)
-{
-   
-    .cardTitle{
-        font-size: 12px;
-    }
-    .cardDescription{
-        font-size: 0.7rem;
-    }
-    .cardPrice{
-        font-size: 0.8rem;
-    }
-    .cardContainer{
-     width: 180px;
-     height: 320px;
-    }
- }
-
-@media screen and (max-width:768px)
-{
-   .cardImage img{
-       height: 90%;
-       width: 90%;
-   }
-   .cardTitle{
-       font-size: 12px;
-   }
-   .cardDescription{
-       font-size: 0.7rem;
-   }
-   .cardPrice{
-       font-size: 0.8rem;
-   }
-   .cardContainer{
+@media screen and (max-width: 768px) {
+  .cardImage img {
+    height: 90%;
+    width: 90%;
+  }
+  .cardTitle {
+    font-size: 12px;
+  }
+  .cardDescription {
+    font-size: 0.7rem;
+  }
+  .cardPrice {
+    font-size: 0.8rem;
+  }
+  .cardContainer {
     width: 165px;
     height: 310px;
-   }
+  }
 }
 
-@media screen and (max-width:650px)
-{
-    .cardImage img{
-        height: 100%;
-        width: 100%;
-    }
-    .cardContainer{
-        width: 155px;
-        height: 280px;
-       }
-       .cardTitle{
-        font-size: 12px;
-    }
-    .cardDescription{
-        font-size: 0.7rem;
-    }
-    .cardPrice{
-        font-size: 0.8rem;
-    }
-
+@media screen and (max-width: 650px) {
+  .cardImage img {
+    height: 100%;
+    width: 100%;
+  }
+  .cardContainer {
+    width: 155px;
+    height: 280px;
+  }
+  .cardTitle {
+    font-size: 12px;
+  }
+  .cardDescription {
+    font-size: 0.7rem;
+  }
+  .cardPrice {
+    font-size: 0.8rem;
+  }
 }

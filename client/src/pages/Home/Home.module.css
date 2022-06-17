@@ -51,7 +51,7 @@ header{
 }
 
 
-.cardHeadTitle p a{
+.cardHeadTitle p div{
     color: inherit;
     display: flex;
     text-decoration: none;
@@ -62,6 +62,7 @@ header{
     border-radius: 5px;
     border: none;
     font-family: 'Inter';
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1000px)

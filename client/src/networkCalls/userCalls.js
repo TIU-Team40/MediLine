@@ -310,13 +310,13 @@ export const cancelOrder = async (orderId) => {
   }
 };
 
-export const createNotification = async (
+export const createNotification = async ({
   toUserId,
   type,
   orderId,
   text,
-  prescription
-) => {
+  prescription,
+}) => {
   try {
     let formData = new FormData();
     formData.append("prescription", prescription);

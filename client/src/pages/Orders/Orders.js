@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Orders.css";
 import "../../styles/global.css";
 import { useAuth } from "../../context/Auth/AuthContext";
 import SingleOrderCard from "../../components/SingleOrderCard/SingleOrderCard";
 const Orders = () => {
   const { userState } = useAuth();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="orders-container">
       <div className="orders-heading">

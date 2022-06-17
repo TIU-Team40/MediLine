@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
     addresses: [],
     orders: [],
     cart: [],
-    notification: [],
+    notifications: [],
   });
   const [pharmacyState, pharmacyDispatch] = useReducer(pharmacyReducer, {
     pharmacyId: "",
@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
     ratings: "",
     orders: [],
     inventory: [],
-    notification: [],
+    notifications: [],
   });
 
   const [networkLoader, setNetworkLoader] = useState(false);

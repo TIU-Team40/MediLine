@@ -165,7 +165,18 @@
     cursor:pointer;
     position: relative;
   
-}   
+}  
+
+.user-logo-info {
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+.user-logo-info > span {
+    font-weight: 650;
+    font-size: 18px;
+}
 .user-logo-dropdown{
     display: flex;
     flex-direction: column;

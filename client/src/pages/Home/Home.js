@@ -9,8 +9,10 @@ import "../../styles/global.css";
 import { useAuth } from "../../context/Auth/AuthContext";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import LocationFinder from "../../components/LocationFinder/LocationFinder";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
   const type = JSON.parse(localStorage.getItem("type"));
+  const navigate = useNavigate();
   const isShopowner = type === "pharmacy";
   const { medicineDisease } = useAuth();
   const medicineDiseaseArray = [
@@ -24,47 +26,102 @@ const Home = () => {
       ) : (
         <div>
           <header>
-           <div className={classes.location}>
-             <LocationFinder />
+            <div className={classes.location}>
+              <LocationFinder />
             </div>
-           <div className={classes.searchBar}>
-          <SearchBar
-            placeholder="Search for diseases / medicine"
-            data={medicineDiseaseArray}
-           />
-           </div>
-      </header>
+            <div className={classes.searchBar}>
+              <SearchBar
+                placeholder="Search for diseases / medicine"
+                data={medicineDiseaseArray}
+              />
+            </div>
+          </header>
           <MidCards />
           <HeroBanner />
-          {homepage_category.map((data) => {
-            return (
-              <React.Fragment key={data.id}>
-                <div className={classes.cardCategory}>
-                  <div className={classes.cardHeadTitle}>
-                    <h1>{data.headTitle}</h1>
+          <React.Fragment>
+            <div className={classes.cardCategory}>
+              <div className={classes.cardHeadTitle}>
+                <h1>Recommended</h1>
 
-                    <p>
-                      <a href="#">Show All</a>
-                    </p>
-                  </div>
-                  <div className={classes.cardSection}>
-                    {data.categoryArray.map((product) => {
-                      return (
-                        <Card
-                          headTitle={product.headTitle}
-                          title={product.title}
-                          imageUrl={product.imageUrl}
-                          description={product.description}
-                          price={product.price}
-                          key={product.headTitle}
-                        />
-                      );
-                    })}
-                  </div>
-                </div>
-              </React.Fragment>
-            );
-          })}
+                <p>
+                  <div onClick={() => navigate("/products")}>Show All</div>
+                </p>
+              </div>
+              <div className={classes.cardSection}>
+                {medicineDisease.medicines.slice(13, 18).map((product) => {
+                  return (
+                    <Card
+                      id={product._id}
+                      headTitle={product.headTitle}
+                      title={product.name}
+                      imageUrl={product.picture}
+                      description={product.description}
+                      price={product.price}
+                      key={product._id}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          </React.Fragment>
+          <React.Fragment>
+            <div className={classes.cardCategory}>
+              <div className={classes.cardHeadTitle}>
+                <h1>Seasonal Medicines</h1>
+
+                <p>
+                  <div onClick={() => navigate("/products")}>Show All</div>
+                </p>
+              </div>
+              <div className={classes.cardSection}>
+                {medicineDisease.medicines
+                  .filter((medicine) => medicine.seasons[1] === "Monsoon")
+                  .slice(0, 5)
+                  .map((product) => {
+                    return (
+                      <Card
+                        id={product._id}
+                        headTitle={product.headTitle}
+                        title={product.name}
+                        imageUrl={product.picture}
+                        description={product.description}
+                        price={product.price}
+                        key={product._id}
+                      />
+                    );
+                  })}
+              </div>
+            </div>
+          </React.Fragment>
+          <React.Fragment>
+            <div className={classes.cardCategory}>
+              <div className={classes.cardHeadTitle}>
+                <h1>New Arrivals</h1>
+
+                <p>
+                  <div onClick={() => navigate("/products")}>Show All</div>
+                </p>
+              </div>
+              <div className={classes.cardSection}>
+                {medicineDisease.medicines
+                  .filter((medicine) => medicine.seasons[1] === "Monsoon")
+                  .slice(8, 13)
+                  .map((product) => {
+                    return (
+                      <Card
+                        id={product._id}
+                        headTitle={product.headTitle}
+                        title={product.name}
+                        imageUrl={product.picture}
+                        description={product.description}
+                        price={product.price}
+                        key={product._id}
+                      />
+                    );
+                  })}
+              </div>
+            </div>
+          </React.Fragment>
         </div>
       )}
     </div>

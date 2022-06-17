@@ -1,4 +1,8 @@
-import { createOrder, emptyCart } from "../networkCalls/userCalls";
+import {
+  createNotification,
+  createOrder,
+  emptyCart,
+} from "../networkCalls/userCalls";
 // import icon64 from "../icon/Utility-UI-64.png";
 // import { toast } from "react-toastify";
 
@@ -41,6 +45,11 @@ export const proceedToPay = async (
           orderTotalValue,
           pharmacyId
         );
+        await createNotification({
+          toUserId: pharmacyId,
+          type: "Order_Placed",
+          order: res.order,
+        });
         userDispatch({ type: "ADD_TO_ORDER", payload: res.order });
         await emptyCart();
         userDispatch({ type: "EMPTY_CART" });

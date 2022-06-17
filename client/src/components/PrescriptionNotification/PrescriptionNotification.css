@@ -7,7 +7,7 @@
     font-size: 14px;
 }
 
-.open-prescription-button button{
+.open-prescription-button a{
     border: none;
     padding: 0.5rem 1.5rem;
     color: none;
@@ -20,7 +20,7 @@
     transition: all .25s ease-out;
 }
 
-.open-prescription-button button:hover{
+.open-prescription-button a:hover{
     background-color: var(--color-secondary-dark);
     transform: scale(1.1);
 }

@@ -46,7 +46,7 @@ export function pharmacyReducer(acc, action) {
         ratings: action.payload.ratings,
         orders: action.payload.orders,
         inventory: action.payload.inventory,
-        notification: action.payload.notification,
+        notifications: action.payload.notifications,
       };
     }
 
@@ -63,7 +63,7 @@ export function pharmacyReducer(acc, action) {
         ratings: action.payload.ratings,
         orders: action.payload.orders,
         inventory: action.payload.inventory,
-        notification: action.payload.notification,
+        notifications: action.payload.notifications,
       };
     }
 
@@ -82,7 +82,7 @@ export function pharmacyReducer(acc, action) {
         ratings: "",
         orders: [],
         inventory: [],
-        notification: [],
+        notifications: [],
       };
     }
 

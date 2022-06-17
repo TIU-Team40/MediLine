@@ -72,7 +72,7 @@ const Navbar = () => {
         </div>
       ) : (
         <div className="user-icons">
-          <div className="notification-bell">
+          {/* <div className="notification-bell">
             <BsBell
               size="1.7em"
               onClick={() => setNotificationOpen(!notificationOpen)}
@@ -85,7 +85,7 @@ const Navbar = () => {
                 </p>
               </div>
             )}
-          </div>
+          </div> */}
           <div className="user-logo">
             <FaUserCircle size="1.8em" onClick={() => setOpen(!open)} />
             {open && (

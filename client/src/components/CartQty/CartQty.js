@@ -28,7 +28,11 @@ const CartQty = ({ product }) => {
       <div className="remove-icon" onClick={removeFromCartHandler}>
         <BiTrash size="1.75em" />
       </div>
-      <button className="cart-qty-minus" onClick={decreaseQuantityHandler}>
+      <button
+        className="cart-qty-minus"
+        onClick={decreaseQuantityHandler}
+        disabled={product.quantity === 1 ? true : false}
+      >
         -
       </button>
       <div className="cart-qty-number">{product.quantity}</div>

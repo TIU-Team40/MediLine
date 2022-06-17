@@ -7,10 +7,6 @@ import { BiUserCircle } from "react-icons/bi";
 import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { BsBell } from "react-icons/bs";
-import Notification from "../Notification/Notification";
-import { dummy_notification } from "../../dummy_data";
-import CartContext from "../../context/Cart/CartContext";
-import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../networkCalls/userCalls";
 import { useAuth } from "../../context/Auth/AuthContext";
@@ -19,9 +15,7 @@ const ShopNavbar = () => {
   const isLoggedIn = JSON.parse(localStorage.getItem("type"));
 
   const [open, setOpen] = useState(false);
-  const [notificationOpen, setNotificationOpen] = useState(false);
-  const { cartItems, totalItem } = useContext(CartContext);
-  const { userDispatch, setNetworkLoader } = useAuth();
+  const { userDispatch, pharmacyState, setNetworkLoader } = useAuth();
   const navigate = useNavigate();
 
   async function logoutHandler() {
@@ -36,7 +30,7 @@ const ShopNavbar = () => {
       <div className="logo">
         <h3>
           <Link to="/">
-             <span className="main-logo">MediLine  </span>
+            <span className="main-logo">MediLine </span>
             <span className="pharmacy-logo">Pharmacy</span>
           </Link>
         </h3>
@@ -56,7 +50,12 @@ const ShopNavbar = () => {
 
       <div className="user-icons">
         <div className="user-logo">
-          <FaUserCircle size="1.8em" onClick={() => setOpen(!open)} />
+          <div className="user-logo-info">
+            <span onClick={() => navigate("/shopprofile")}>
+              {pharmacyState.name}
+            </span>
+            <FaUserCircle size="1.8em" onClick={() => setOpen(!open)} />
+          </div>
           {open && (
             <div className="user-logo-open">
               <div className="user-logo-dropdown">
@@ -82,6 +81,7 @@ const ShopNavbar = () => {
             />
 
             <ul className="menu-link-smallscreen">
+              <span>{pharmacyState.name}</span>
               <button
                 className="auth-btn-smallscreen"
                 type="button"
