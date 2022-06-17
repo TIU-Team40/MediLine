@@ -21,28 +21,35 @@ exports.createNotification = BigPromise(async (req, res) => {
   const { toUserId, type, orderId, text } = req.body;
 
   const notificationObject = {
-    fromUser: user._id,
+    fromUser: user,
     toUser: toUserId,
     type,
-    order: orderId,
     isRead: false,
+    prescription: {},
   };
 
+  if (orderId) notificationObject.ordrer = orderId;
   if (text) notificationObject.prescription.text = text;
-
   if (req.files) {
     const prescription = req.files.prescription;
-
-    const result = await cloudinary.uploader.upload(prescription.tempFilePath, {
-      folder: "mediline/prescription",
-      crop: "scale",
-    });
-
-    notificationObject.prescription.file = {
-      id: result.public_id,
-      secure_url: result.secure_url,
-    };
+    try {
+      const result = await cloudinary.uploader.upload(
+        prescription.tempFilePath,
+        {
+          folder: "mediline/prescription",
+          crop: "scale",
+        }
+      );
+      notificationObject.prescription.file = {
+        id: result.public_id,
+        secure_url: result.secure_url,
+      };
+    } catch (err) {
+      console.log(err);
+    }
   }
+
+  // console.log(notificationObject, "LOL");
 
   const notification = await Notification.create(notificationObject);
 

@@ -1,5 +1,7 @@
 const Pharmacy = require("../models/pharmacyModel");
 const Medicine = require("../models/medicineModel");
+const Order = require("../models/orderModel");
+const Notification = require("../models/notificationModel");
 const BigPromise = require("../middlewares/bigPromise");
 const cookieToken = require("../utils/pharmacyCookieToken");
 const { extend } = require("lodash");
@@ -79,14 +81,23 @@ exports.login = BigPromise(async (req, res) => {
       message: "Incorrect Password !!",
     });
 
-  // const allNotifications = await Notification.find()
-  //   .populate("fromUser")
-  //   .populate("order")
-  //   .populate("toUser");
+  const allNotifications = await Notification.find()
+    .populate("fromUser")
+    .populate("order")
+    .populate("toUser");
 
-  // const userNotification = UserNotification(pharmacy._id, allNotifications);
+  const userNotification = UserNotification(pharmacy._id, allNotifications);
 
-  // pharmacy.notification = userNotification;
+  pharmacy.notifications = userNotification;
+
+  const pharmacyId = pharmacy._id;
+
+  const orders = await Order.find({ pharmacyId })
+    .populate("medicines.medicine")
+    .populate("address")
+    .populate("pharmacy");
+
+  pharmacy.orders = orders;
 
   cookieToken(pharmacy, res);
 });
