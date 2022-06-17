@@ -13,9 +13,33 @@
 }
 
 .notification-title{
-    font-size: 20px;
-    font-weight: bold;
-    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-family: 'Gilroy-Bold';
+}
+
+.notification-title h3{
+    color: rgb(12, 182, 12);margin: 0;
+}
+
+.notification-title p button{
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--color-primary);
+    font-family: 'Inter';
+    font-weight: 600;
+    transition: all .25s ease;
+    cursor: pointer;
+}
+
+.notification-title p button:hover{
+    transform: scale(1.1);
+
+    background-color: var(--color-primary-dark);
 }
 
 .notification-description{
@@ -24,8 +48,12 @@
     margin: 1rem 0;
 }
 
+.notification-order-details{
+    font-size: 14px;
+}
+
 .notification-user-address p{
-    line-height: 14px;
+    margin: 5px 0;
     font-size: 16px;
 }
 
