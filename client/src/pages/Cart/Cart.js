@@ -31,7 +31,7 @@ const Cart = () => {
           navigate,
           pharmacyId
         );
-        setError("")
+        setError("");
       }
     } else setError("Please Select Medicines from single pharmacy.");
   };
@@ -70,9 +70,19 @@ const Cart = () => {
           </div>
 
           <div className="checkout-btn">
-            <div className="subtotal">
-              <span>Subtotal : </span>
-              <span>₹{bagValue} </span>
+            <div>
+              <div className="subtotal">
+                <span>Subtotal : </span>
+                <span> ₹{bagValue} </span>
+              </div>
+              <div className="subtotal">
+                <span>Discount : </span>
+                <span> ₹{discountValue} </span>
+              </div>
+              <div className="total">
+                <span>Total : </span>
+                <span> ₹{orderTotalValue} </span>
+              </div>
             </div>
             {error !== "" && <h4 className="error-message">{error}</h4>}
             <button type="button" onClick={paymentHandler}>
