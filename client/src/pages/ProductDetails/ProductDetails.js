@@ -69,7 +69,7 @@ const ProductDetails = ({ similarProducts }) => {
         <h2>Medicines similar to this: </h2>
 
         <div className="maylike-products-container track">
-          {similarProducts.map((item) => (
+          {medicineDisease.medicines.slice(15,20).map((item) => (
             <ProductPageCard key={item._id} product={item} />
           ))}
         </div>
